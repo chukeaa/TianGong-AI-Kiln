@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "162390541235",
+  "created_at": "2025-03-07T16:28:11.223230",
+  "created_by": "TianGong",
+  "input": "在进行空气质量监测时,如何计算空气质量指数（$AQI$）以及确定首要污染物？",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "213681993354",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.223230",
+    "created_by": "TianGong",
+    "output": "空气质量指数（AQI）是定量描述空气质量状况的无量纲指数，用于反映空气污染程度和健康影响。计算AQI和确定首要污染物的步骤如下：\n\n### 1. 监测污染物浓度\n首先，需要监测以下几种主要空气污染物的浓度：\n- 二氧化硫（SO2）\n- 一氧化碳（CO）\n- 二氧化氮（NO2）\n- 颗粒物（PM10）\n- 颗粒物（PM2.5）\n- 臭氧（O3）\n\n### 2. 确定各污染物的分指数（IAQI）\n对于每种污染物，根据其浓度值，通过分段线性插值的方法计算对应的分指数（IAQI）。具体步骤如下：\n\n#### 步骤：\n1. **获取浓度值**：测量得到各污染物的实际浓度。\n2. **查找标准分段**：根据国家或地区的空气质量标准，查找各污染物在不同浓度范围内的对应IAQI值。例如，中国环保部发布的《环境空气质量指数（AQI）技术规定（试行）》（HJ 633-2012）中给出了详细的分段标准。\n3. **线性插值计算**：使用线性插值公式计算IAQI。\n\n线性插值公式：\n\\[ IAQI = \\frac{(IAQI_{\\text{high}} - IAQI_{\\text{low}}) \\times (C - C_{\\text{low}})}{C_{\\text{high}} - C_{\\text{low}}} + IAQI_{\\text{low}} \\]\n\n其中：\n- \\( IAQI_{\\text{high}} \\) 和 \\( IAQI_{\\text{low}} \\) 分别为浓度分段上下限对应的IAQI值。\n- \\( C_{\\text{high}} \\) 和 \\( C_{\\text{low}} \\) 分别为浓度分段上下限。\n- \\( C \\) 为实际测量的污染物浓度。\n\n### 3. 计算空气质量指数（AQI）\nAQI为各污染物分指数（IAQI）中的最大值：\n\\[ AQI = \\max(IAQI_{SO2}, IAQI_{CO}, IAQI_{NO2}, IAQI_{PM10}, IAQI_{PM2.5}, IAQI_{O3}) \\]\n\n### 4. 确定首要污染物\n首要污染物是指导致AQI值最高的污染物。通过比较各污染物的IAQI值，IAQI值最大的污染物即为首要污染物。\n\n### 示例\n假设某地监测数据如下：\n- SO2浓度：30 μg/m³\n- CO浓度：2 mg/m³\n- NO2浓度：40 μg/m³\n- PM10浓度：70 μg/m³\n- PM2.5浓度：35 μg/m³\n- O3浓度：120 μg/m³\n\n根据分段标准计算各IAQI值（此处省略具体计算过程），假设得到：\n- IAQI_SO2 = 50\n- IAQI_CO = 40\n- IAQI_NO2 = 60\n- IAQI_PM10 = 80\n- IAQI_PM2.5 = 70\n- IAQI_O3 = 90\n\n则：\n\\[ AQI = \\max(50, 40, 60, 80, 70, 90) = 90 \\]\n\n首要污染物为臭氧（O3），因为其IAQI值最高。\n\n### 注意事项\n- 不同国家和地区的空气质量标准和分段可能有所不同，需根据当地标准进行计算。\n- 计算过程中需确保使用最新和准确的浓度数据和标准。\n\n通过以上步骤，可以系统地计算空气质量指数（AQI）并确定首要污染物，为空气质量管理提供科学依据。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "glm-4-plus",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "106254307573",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.223230",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 5,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 5,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "该回答清晰、准确，与标准空气质量指数（AQI）计算过程紧密相符。它全面描述了如何测量污染物、计算分指数以及确定首要污染物。逻辑结构合理，并通过一个有用的例子来展示实际操作步骤。参考标准（HJ 633-2012）以及线性插值公式等支持细节得到了正确应用。总体而言，它以良好的清晰度和准确性满足了核心要求。一个可能的改进是强调额外的细微之处，例如处理所有IAQI值均低于50的情况，或更明确地引用当地法规条件。不过，该回答结构良好，几乎是完整的。",
+  "repaired_output": {
+    "v": 1,
+    "id": "107443754935",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.223230",
+    "created_by": "TianGong",
+    "output": "空气质量指数（$AQI$）的计算过程如下：\n\n首先，对于每种污染物（如 $\\text{PM}_{2.5}$、$\\text{PM}_{10}$、$\\text{SO}_2$ 等），根据其实测浓度值（$C_p$），参考相应地区的空气质量分指数及对应的污染物项目浓度限值表（如 GB 3095—2012），计算出每种污染物的空气质量分指数（$\\text{IAQI}_p$）。\n\n$\\text{IAQI}_p$ 的计算公式为：\n\n$$\n\\text{IAQI}_p = \\frac{C_p - \\text{BP}_{\\text{Lo}}}{\\text{BP}_{\\text{Hi}} - \\text{BP}_{\\text{Lo}}} \\times (\\text{IAQI}_{\\text{Hi}} - \\text{IAQI}_{\\text{Lo}}) + \\text{IAQI}_{\\text{Lo}}\n$$\n\n其中，$\\text{BP}_{\\text{Lo}}$ 和 $\\text{BP}_{\\text{Hi}}$ 分别为与 $C_p$ 相近的污染物浓度限值的低位值和高位值，$\\text{IAQI}_{\\text{Lo}}$ 和 $\\text{IAQI}_{\\text{Hi}}$ 分别为与 $\\text{BP}_{\\text{Lo}}$ 和 $\\text{BP}_{\\text{Hi}}$ 对应的空气质量分指数。\n\n然后，比较所有污染物的 $\\text{IAQI}$ 值，取最大值作为 $AQI$。当 $AQI$ 大于 50 时，$\\text{IAQI}$ 最大对应的污染物即为首要污染物。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

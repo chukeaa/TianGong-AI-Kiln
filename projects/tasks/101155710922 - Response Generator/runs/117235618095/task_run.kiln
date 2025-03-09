@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "117235618095",
+  "created_at": "2025-03-07T16:28:11.319415",
+  "created_by": "TianGong",
+  "input": "假如当日北京市环境空气质量首要污染物为PM2.5，当日PM2.5的24小时平均浓度为100微克/立方米。请计算当日北京空气质量指数（AQI）。",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "638767420668",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.319415",
+    "created_by": "TianGong",
+    "output": "这是一道关于空气质量指数（$AQI$）计算的问题。\n$AQI$的计算需要考虑各种污染物的浓度，并将其转化为一个统一的指数来表示空气质量。\n题目中给出了$PM2.5$的24小时平均浓度为100微克/立方米，并且指出$PM2.5$是当日的首要污染物。\n$AQI$的计算通常遵循一定的标准和公式，但在这个问题中，可以直接使用$PM2.5$浓度与$AQI$之间的对应关系来求解。\n根据常见的$AQI$计算标准，当$PM2.5$的24小时平均浓度在$51$微克/立方米至$100$微克/立方米之间时，对应的$AQI$值可以通过线性插值法来计算。\n具体地，当$PM2.5$浓度为$51$微克/立方米时，$AQI$为$101$；\n当$PM2.5$浓度为$100$微克/立方米时，$AQI$为$150$。\n因此，可以使用以下公式来计算当日的$AQI$：\n$AQI = \\frac{(150 - 101) \\times (100 - 51)}{(100 - 51)} + 101 = 141$（四舍五入取整）\n所以，当日北京的空气质量指数（$AQI$）为141。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "ERNIE-4.0-Turbo-8K",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "248195297363",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.319415",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 3,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 3,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "从结果看，标准答案是AQI=132，而回应计算得到AQI=141，造成明显偏差。主要原因是使用了不正确的浓度区间和对应的AQI范围，未按照HJ 633-2012中的BPL=75、BPH=115等参数进行计算，导致结果并未符合规范公式。\n\n要改进逻辑思路，首先需要正确使用对应浓度区间的上下限、AQI上下限等，按照公式：(IAQIH−IAQIL)/(BPH−BPL)×(C−BPL)+IAQIL，逐一对应计算并确保插值区间正确。最后根据HJ 633-2012的规定对结果做进位取整。\n\n依据上述标准，建议给出正确区间并代入公式，以避免在区间或数值选择上出现偏差，从而得出符合规范计算的方法和结果。",
+  "repaired_output": {
+    "v": 1,
+    "id": "844392028064",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.319415",
+    "created_by": "TianGong",
+    "output": "根据中国环境保护部发布的《环境空气质量指数（AQI）技术规定》（HJ 633-2012），我们可以通过PM2.5的24小时平均浓度来计算空气质量指数（AQI）。\n首先确定PM2.5的浓度区间。根据规定，找到PM2.5浓度100微克/立方米所在的区间。100微克/立方米位于第三等级的区间，即75-115微克/立方米。\n计算PM2.5的空气质量分指数IAQI的公式为： IAQI = (IAQIH- IAQIL) / (BPH - BPL) * (C - BPL) + IAQIL 其中IAQIH：该浓度区间对应的AQI上限；IAQIL：该浓度区间对应的AQI下限；BPH：该浓度区间的上限；BPL：该浓度区间的下限；C：PM2.5的实际浓度。\n对于PM2.5浓度100微克/立方米的区间，我们有：\nIAQIH = 150，IAQIL = 100，BPH = 115，BPL = 75，C = 100，将这些值代入公式计算PM2.5的空气质量分指数IAQI： IAQI = (150 - 100) / (115 - 75) * (100 - 75) + 100 ≈ 131.25。根据《环境空气质量指数（AQI）技术规定》（HJ 633-2012）第6.2条，计算结果应全部进位取整数，不保留小数。因此当日北京市PM2.5的空气质量分指数IAQI =132。因为已知PM2.5是当天的首要污染物，所以当日北京市的AQI等于PM2.5的空气质量分指数IAQI，即当日北京的空气质量指数（AQI）为132。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

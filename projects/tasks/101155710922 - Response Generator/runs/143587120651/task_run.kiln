@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "143587120651",
+  "created_at": "2025-03-07T16:28:11.313600",
+  "created_by": "TianGong",
+  "input": "假设一个污水处理厂每天处理100万升含有200 mg/L可降解生物质的废水，{CH2O}。在25°C条件下，计算每天需要向废水中泵入的干空气体积（氧气体积占比为20.95%），以提供降解生物质所需的氧气。",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "222479946894",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.313600",
+    "created_by": "TianGong",
+    "output": "要计算每天需要向废水中泵入的干空气体积（氧气体积占比为$20.95\\%$），\n首先需要知道降解生物质所需的氧气量。\n假设可降解生物质${CH}_{2}O$完全氧化成${CO}_{2}$和所需的氧气量。\n根据化学方程式：\n$C_{x}H_{y}O_{z} + (x +\\frac{y}{4} - \\frac{z}{2})O_{2} \\rightarrow x{CO}_{2} + \\frac{y}{2}H_{2}O$，\n对于${CH}_{2}O$，有$x = 1, y = 2, z = 1$，所以：\n$1{mol} {CH}_{2}O$完全氧化需要$(1 + \\frac{2}{4} - \\frac{1}{2}) = 1{mol} O_{2}$，\n即每克${CH}_{2}O$完全氧化需要$1 \\div 30= \\frac{1}{30} {mol} O_{2}$（因为${CH}_{2}O}$的摩尔质量为$30g/{mol}$），\n每天有$100$万升废水，含有$200mg/L$的可降解生物质，所以每天的总生物质质量为：\n$100 \\times 10^{4} L \\times 0.2g/L = 2 \\times 10^{6} g$，\n因此，每天需要的氧气摩尔数为：\n$ 2 \\times 10^{6} g \\times\\frac{ 1}{30} {mol}/g = \\frac{2\\times 10^{6} }{30} {mol}$，\n在标准状况下（$25^{\\circ}C$，$1$大气压），$1{mol}$任何气体的体积都是$22.4L$。\n所以，每天需要的氧气体积为：\n$\\frac{2\\times 10^{6} }{30} {mol} \\times 22.4L/{mol} = \\frac{44.8\\times 10^{6} }{30} L$，\n由于干空气中氧气的体积占比为$20.95\\%$，所以每天需要的干空气体积为：\n$\\frac{44.8\\times 10^{6} }{30} \\div 20.95\\% \\approx 7.11 \\times 10^{6} L=7110m^{3}$。\n综上所述，答案为：$7110m^{3}$。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "ERNIE-4.0-Turbo-8K",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "509654288401",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.313600",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 3,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 3,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "该解答在求得有机物总量时出现了数量级上的失误：原本应为2×10^5 g，却被计算为2×10^6 g，导致后续所需氧气及空气体积都大幅偏离标准答案。同时，解答中使用了在25°C下仍取22.4 L/mol这一近似，也会带来额外误差。整体而言逻辑思路尚可，但由于数量级错误直接导致最终结果比标准答案大一个数量级，故评为50~69分。建议今后在进行单位换算时仔细核对，使用理想气体定律在实际温度下进行准确体积计算。",
+  "repaired_output": {
+    "v": 1,
+    "id": "222436255973",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.313600",
+    "created_by": "TianGong",
+    "output": "反应为：\n\\[\n\\{{\\rm CH}_2O\\} + O_2 \\rightarrow CO_2 + H_2O.\n\\]\n100万升水中生物质的量为：\n\\[\n2.00 \\times 10^8 \\, \\text{mg} = 2.00 \\times 10^5 \\, \\text{g}.\n\\]\n需要与这些生物质反应的\\( O_2 \\)摩尔数为：\n\\[\n2.00 \\times 10^5 \\, \\text{g} \\ \\{ \\text{CH}_2\\text{O} \\} \\times \\frac{1 \\, \\text{mol} \\ \\{ \\text{CH}_2\\text{O} \\}}{30 \\, \\text{g} \\ \\{ \\text{CH}_2\\text{O} \\}} \\times \\frac{1 \\, \\text{mol} \\ O_2}{1 \\, \\text{mol} \\ \\{ \\text{CH}_2\\text{O} \\}} = 6.67 \\times 10^3 \\, \\text{mol} \\ O_2.\n\\]\n由于干空气中仅有20.95\\%是\\( O_2 \\)，所以需要的空气摩尔数为：\n\\[\n3.18 \\times 10^4 \\, \\text{mol}.\n\\]\n在25°C和1 atm压力下，这些空气的体积可以通过理想气体定律计算：\n\\[\nPV = nRT,\n\\]\n其中\\( R = 0.0821 \\, \\text{L atm mol}^{-1} \\)，得出：\n\\[\n7.78 \\times 10^5 \\, \\text{L of air}.\n\\]\n实际上只有一部分空气中的氧气被转移到污水中，因此需要泵入更多的空气以提供所需的氧气。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

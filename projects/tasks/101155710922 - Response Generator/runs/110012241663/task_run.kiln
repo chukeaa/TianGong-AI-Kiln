@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "110012241663",
+  "created_at": "2025-03-07T16:28:11.220230",
+  "created_by": "TianGong",
+  "input": "假如当日北京市环境空气质量首要污染物为$PM_{2.5}$，当日$PM_{2.5}$的24小时平均浓度为$100$微克/立方米。请计算当日北京空气质量指数（$AQI$）。",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "277265097251",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.220230",
+    "created_by": "TianGong",
+    "output": "要计算北京空气质量指数（AQI），需要按照中国环境保护部发布的《环境空气质量指数（AQI）技术规定（试行）》（HJ 633-2012）中的计算方法进行。以下是具体的步骤：\n\n1. **确定污染物浓度**：\n   - 已知当日PM2.5的24小时平均浓度为100微克/立方米。\n\n2. **查找对应的空气质量分指数（IAQI）**：\n   - 根据HJ 633-2012标准，PM2.5的浓度与IAQI的对应关系如下表所示（部分）：\n\n     | PM2.5浓度（微克/立方米） | IAQI范围 |\n     |--------------------------|----------|\n     | 0–35                     | 0–50     |\n     | 35–75                    | 51–100   |\n     | 75–115                   | 101–150  |\n     | 115–150                  | 151–200  |\n     | 150–250                  | 201–300  |\n     | 250–350                  | 301–400  |\n     | 350–500                  | 401–500  |\n\n3. **计算IAQI**：\n   - 100微克/立方米的PM2.5浓度落在75–115微克/立方米的区间内，对应的IAQI范围为101–150。\n   - 使用线性插值法计算具体的IAQI：\n     \\[\n     IAQI = \\frac{(C - C_{\\text{low}}) \\times (IAQI_{\\text{high}} - IAQI_{\\text{low}})}{C_{\\text{high}} - C_{\\text{low}}} + IAQI_{\\text{low}}\n     \\]\n     其中：\n     - \\( C \\) 是实际浓度，即100微克/立方米。\n     - \\( C_{\\text{low}} \\) 是区间下限，即75微克/立方米。\n     - \\( C_{\\text{high}} \\) 是区间上限，即115微克/立方米。\n     - \\( IAQI_{\\text{low}} \\) 是区间下限对应的IAQI，即101。\n     - \\( IAQI_{\\text{high}} \\) 是区间上限对应的IAQI，即150。\n\n     代入数值：\n     \\[\n     IAQI = \\frac{(100 - 75) \\times (150 - 101)}{115 - 75} + 101\n     \\]\n     \\[\n     IAQI = \\frac{25 \\times 49}{40} + 101\n     \\]\n     \\[\n     IAQI = \\frac{1225}{40} + 101\n     \\]\n     \\[\n     IAQI = 30.625 + 101\n     \\]\n     \\[\n     IAQI = 131.625 \\approx 132\n     \\]\n\n4. **确定空气质量指数（AQI）**：\n   - 由于PM2.5是首要污染物，AQI即为PM2.5对应的IAQI值。\n\n因此，当日北京的空气质量指数（AQI）为132，属于轻度污染。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "glm-4-plus",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "273723177082",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.221229",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 5,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 5,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "该响应准确地计算了PM2.5浓度为100 μg/m³时的AQI值，并得出了正确的最终答案（132）。逐步过程逻辑连贯，并遵循线性插值公式。尽管标准答案使用的是IAQI范围100–150，而响应中使用的是101–150，但这两种方法在四舍五入后都得出了相同的正确结果。改进建议：确保IAQI指数边界与HJ 633-2012中规定的具体范围一致，以消除中间值中的细微差异，但需注意，最终答案不受影响。",
+  "repaired_output": {
+    "v": 1,
+    "id": "820168867657",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.221229",
+    "created_by": "TianGong",
+    "output": "根据中国环境保护部发布的《环境空气质量指数（AQI）技术规定》（HJ 633-2012），我们可以通过$PM_{2.5}$的24小时平均浓度来计算空气质量指数（AQI）。\n首先确定$PM_{2.5}$的浓度区间。根据规定，找到$PM_{2.5}$浓度$100$微克/立方米所在的区间。$100$微克/立方米位于第三等级的区间，即$75-115$微克/立方米。\n计算$PM_{2.5}$的空气质量分指数$IAQI$的公式为： $IAQI = (IAQIH- IAQIL) / (BPH - BPL) * (C - BPL) + IAQIL$ 其中$IAQIH$：该浓度区间对应的$AQI$上限；$IAQIL$：该浓度区间对应的$AQI$下限；$BPH$：该浓度区间的上限；$BPL$：该浓度区间的下限；$C$：$PM_{2.5}$的实际浓度。\n对于$PM_{2.5}$浓度$100$微克/立方米的区间，我们有：\n $IAQIH = 150$，$IAQIL = 100$，$BPH = 115$，$BPL = 75$，$C = 100$，将这些值代入公式计算$PM_{2.5}$的空气质量分指数$IAQI： IAQI = (150 - 100) / (115 - 75) * (100 - 75) + 100 ≈ 131.25$。根据《环境空气质量指数（AQI）技术规定》（HJ 633-2012）第6.2条，计算结果应全部进位取整数，不保留小数。因此当日北京市$PM_{2.5}$的空气质量分指数$IAQI =132$。因为已知$PM_{2.5}$是当天的首要污染物，所以当日北京市的$AQI等于$PM_{2.5}$的空气质量分指数$IAQI$，即当日北京的空气质量指数（$AQI$）为$132$。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

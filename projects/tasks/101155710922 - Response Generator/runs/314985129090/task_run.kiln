@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "314985129090",
+  "created_at": "2025-03-07T16:28:11.245912",
+  "created_by": "TianGong",
+  "input": "在进行空气质量监测时,如何计算空气质量指数（$AQI$）以及确定首要污染物？",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "287393697679",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.245912",
+    "created_by": "TianGong",
+    "output": "在进行空气质量监测时，计算空气质量指数（AQI）以及确定首要污染物的过程包括以下几个步骤：\n\n---\n\n### 1. **空气质量指数（AQI）的定义**\nAQI 是一个用来反映空气质量状况的无量纲指数，基于常见污染物的浓度值，将空气质量分为若干等级，便于公众理解空气状况的好坏。\n\n中国的 AQI 计算主要考虑以下六种污染物：\n- PM₂.₅（细颗粒物）\n- PM₁₀（可吸入颗粒物）\n- SO₂（二氧化硫）\n- NO₂（二氧化氮）\n- O₃（臭氧，通常以小时值或8小时滑动平均值为基础）\n- CO（一氧化碳，通常以小时值或8小时滑动平均值为基础）\n\n---\n\n### 2. **计算单项污染物的分指数（IAQI）**\n每种污染物都有一个分指数（IAQI），根据污染物的浓度值和相应的分指数区间，通过线性插值法计算。\n\n#### IAQI 计算公式：\n\\[\nIAQI = \\frac{(C - C_L)}{(C_H - C_L)} \\times (IAQI_H - IAQI_L) + IAQI_L\n\\]\n\n其中：\n- \\( C \\)：污染物的实测浓度（通常为24小时或小时均值，单位需与标准一致）\n- \\( C_L \\)：污染物浓度所在区间的下限值\n- \\( C_H \\)：污染物浓度所在区间的上限值\n- \\( IAQI_L \\)：浓度区间对应的 IAQI 下限\n- \\( IAQI_H \\)：浓度区间对应的 IAQI 上限\n\n污染物浓度与 IAQI 对应的分级区间参考《环境空气质量指数（AQI）技术规定》（HJ 633-2012）。\n\n---\n\n### 3. **确定空气质量指数（AQI）**\n计算出每种污染物的 IAQI 后，AQI 是这些污染物 IAQI 中的**最大值**：\n\\[\nAQI = \\max(IAQI_{\\text{PM2.5}}, IAQI_{\\text{PM10}}, IAQI_{\\text{SO2}}, IAQI_{\\text{NO2}}, IAQI_{\\text{O3}}, IAQI_{\\text{CO}})\n\\]\n\n---\n\n### 4. **确定首要污染物**\n首要污染物是指对 AQI 贡献最大的污染物，即 IAQI 最大的污染物。如果多个污染物的 IAQI 相同且最大，则共同作为首要污染物。\n\n---\n\n### 5. **AQI 等级对应的空气质量状况**\n根据 AQI 值的大小，空气质量可分为以下六个等级（见 HJ 633-2012）：\n\n| AQI 范围   | 等级       | 空气质量状况   | 颜色      |\n|------------|------------|----------------|-----------|\n| 0-50       | 一级       | 优            | 绿色      |\n| 51-100     | 二级       | 良            | 黄色      |\n| 101-150    | 三级       | 轻度污染      | 橙色      |\n| 151-200    | 四级       | 中度污染      | 红色      |\n| 201-300    | 五级       | 重度污染      | 紫色      |\n| ≥301       | 六级       | 严重污染      | 褐红色    |\n\n---\n\n### 6. **实例计算**\n假设某地监测的污染物浓度为：\n- PM₂.₅：75 µg/m³\n- PM₁₀：120 µg/m³\n- SO₂：20 µg/m³\n- NO₂：50 µg/m³\n- O₃（8小时平均）：160 µg/m³\n- CO（24小时平均）：1.2 mg/m³\n\n#### 步骤 1：查找浓度对应的分指数区间\n以 PM₂.₅ 为例，假设 75 µg/m³ 对应的浓度区间为 75-100，且对应的 IAQI 为 100-150。\n\n#### 步骤 2：计算分指数（IAQI）\n使用公式计算每种污染物的 IAQI。\n\n#### 步骤 3：确定 AQI 和首要污染物\n找出所有 IAQI 的最大值作为 AQI，并确定该 IAQI 对应的污染物为首要污染物。\n\n---\n\n### 7. **注意事项**\n- 数据来源：AQI 计算需要基于准确的监测数据，数据采集和处理需符合国家标准。\n- 时间尺度：不同污染物的浓度基于不同的时间尺度，例如 PM₂.₅ 通常用 24 小时均值，而 O₃ 可能用 8 小时滑动平均值。\n\n通过上述方法，可以有效地计算 AQI 并确定首要污染物，以帮助公众了解空气质量状况并采取必要的防护措施。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt-4o-2024-11-20",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "435688447291",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.245912",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 5,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 5,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "该回答非常连贯，并且与标准答案非常接近。它正确地引用了所有主要步骤——每种污染物的IAQI的计算，如何将AQI确定为IAQI中的最大值，以及如何确定主要污染物。示例也具有相关性，但可以通过包含实际数值计算的具体演示来改进（即，将真实值代入IAQI公式中）。总体而言，回答在事实和逻辑上都非常准确。为了进一步完善逻辑，可以提供每种污染物IAQI计算的完整数值示例，明确显示如何选择区间，并逐步演示公式的应用。这将强化解释的清晰性和完整性。",
+  "repaired_output": {
+    "v": 1,
+    "id": "199157360718",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.245912",
+    "created_by": "TianGong",
+    "output": "空气质量指数（$AQI$）的计算过程如下：\n\n首先，对于每种污染物（如 $\\text{PM}_{2.5}$、$\\text{PM}_{10}$、$\\text{SO}_2$ 等），根据其实测浓度值（$C_p$），参考相应地区的空气质量分指数及对应的污染物项目浓度限值表（如 GB 3095—2012），计算出每种污染物的空气质量分指数（$\\text{IAQI}_p$）。\n\n$\\text{IAQI}_p$ 的计算公式为：\n\n$$\n\\text{IAQI}_p = \\frac{C_p - \\text{BP}_{\\text{Lo}}}{\\text{BP}_{\\text{Hi}} - \\text{BP}_{\\text{Lo}}} \\times (\\text{IAQI}_{\\text{Hi}} - \\text{IAQI}_{\\text{Lo}}) + \\text{IAQI}_{\\text{Lo}}\n$$\n\n其中，$\\text{BP}_{\\text{Lo}}$ 和 $\\text{BP}_{\\text{Hi}}$ 分别为与 $C_p$ 相近的污染物浓度限值的低位值和高位值，$\\text{IAQI}_{\\text{Lo}}$ 和 $\\text{IAQI}_{\\text{Hi}}$ 分别为与 $\\text{BP}_{\\text{Lo}}$ 和 $\\text{BP}_{\\text{Hi}}$ 对应的空气质量分指数。\n\n然后，比较所有污染物的 $\\text{IAQI}$ 值，取最大值作为 $AQI$。当 $AQI$ 大于 50 时，$\\text{IAQI}$ 最大对应的污染物即为首要污染物。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

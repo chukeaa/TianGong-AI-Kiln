@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "413559647042",
+  "created_at": "2025-03-07T16:28:11.232406",
+  "created_by": "TianGong",
+  "input": "假设一个污水处理厂每天处理$100$万升含有$200 mg/L$可降解生物质（$CH_2O​$）的废水。在$25°C$条件下，计算每天需要向废水中泵入的干空气体积（氧气体积占比为$20.95\\%$），以提供降解生物质所需的氧气。",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "383399491420",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.232406",
+    "created_by": "TianGong",
+    "output": "要计算干空气体积，我们需要确定降解废水中可降解生物质所需的氧气量，并利用空气中氧气的体积分数来推算干空气体积。以下是具体计算步骤：\n\n### 1. 计算废水中可降解生物质的总质量\n废水每天处理的体积为 \\( 100 \\, \\text{万升} = 10^6 \\, \\text{L} \\)，而可降解生物质的浓度是 \\( 200 \\, \\text{mg/L} \\)。因此，废水中可降解生物质的总质量为：\n\\[\n\\text{总质量} = 200 \\, \\text{mg/L} \\times 10^6 \\, \\text{L} = 2 \\times 10^8 \\, \\text{mg} = 2 \\times 10^5 \\, \\text{g} = 200 \\, \\text{kg}\n\\]\n\n### 2. 确定降解可生物降解物质所需的氧气量\n可降解生物质的化学式为 \\( \\text{CH}_2\\text{O} \\)。根据化学反应方程式：\n\\[\n\\text{CH}_2\\text{O} + \\text{O}_2 \\rightarrow \\text{CO}_2 + \\text{H}_2\\text{O}\n\\]\n每 1 摩尔 \\( \\text{CH}_2\\text{O} \\) 需要 1 摩尔 \\( \\text{O}_2 \\)。\n\n- \\( \\text{CH}_2\\text{O} \\) 的摩尔质量为：\n\\[\n12 + 2 \\times 1 + 16 = 30 \\, \\text{g/mol}\n\\]\n- 废水中 \\( \\text{CH}_2\\text{O} \\) 的摩尔数为：\n\\[\n\\text{摩尔数} = \\frac{\\text{总质量}}{\\text{摩尔质量}} = \\frac{200 \\, \\text{kg}}{30 \\, \\text{g/mol}} = \\frac{2 \\times 10^5 \\, \\text{g}}{30 \\, \\text{g/mol}} \\approx 6666.67 \\, \\text{mol}\n\\]\n- 所需氧气的摩尔数为：\n\\[\n\\text{摩尔数} = 6666.67 \\, \\text{mol} \\, (\\text{等于CH}_2\\text{O} \\text{的摩尔数})\n\\]\n\n### 3. 计算所需氧气的体积\n根据理想气体状态方程，1 摩尔气体在标准状态（25°C 和 1 atm 下）占据 \\( 22.414 \\, \\text{L} \\)。因此，所需氧气的体积为：\n\\[\n\\text{氧气体积} = 6666.67 \\, \\text{mol} \\times 22.414 \\, \\text{L/mol} \\approx 149495 \\, \\text{L}\n\\]\n\n### 4. 计算所需干空气体积\n空气中氧气的体积分数为 \\( 20.95\\% \\)。因此，为提供上述氧气体积，所需的干空气体积为：\n\\[\n\\text{干空气体积} = \\frac{\\text{氧气体积}}{\\text{氧气体积分数}} = \\frac{149495 \\, \\text{L}}{0.2095} \\approx 713,394 \\, \\text{L}\n\\]\n\n### 5. 总结\n污水处理厂每天需要向废水中泵入约 **713,394 升干空气**，以提供降解可生物降解物质所需的氧气。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt-4o-2024-11-20",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "215074259545",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.232406",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 4,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 4,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "该解决方案包含了所有核心逻辑步骤（基质质量、摩尔计算、O₂需求和空气体积），并与标准答案高度相符。然而，其中有一个小错误，即在25°C条件下使用了22.414 L/mol（适用于0°C），这导致空气体积略有低估。如果在25°C条件下正确使用理想气体定律或使用约24.45 L/mol，将更接近参考答案的7.78×10⁵ L的结果。总体而言，推理是连贯且几乎完整的，但在25°C假定摩尔体积上的这一小差异使得最终体积略低。建议改进措施是明确地在25°C条件下应用PV=nRT。得分：85。",
+  "repaired_output": {
+    "v": 1,
+    "id": "721573269023",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.232406",
+    "created_by": "TianGong",
+    "output": "反应式为：\n\n$$\n\\text{CH}_2\\text{O} + \\text{O}_2 \\rightarrow \\text{CO}_2 + \\text{H}_2\\text{O}\n$$\n\n100万升水中生物质的量为：\n\n$$\n2.00 \\times 10^8\\,\\text{mg} = 2.00 \\times 10^5\\,\\text{g}\n$$\n\n需要与这些生物质反应的 $\\text{O}_2$ 摩尔数为：\n\n$$\n2.00 \\times 10^5\\,\\text{g CH}_2\\text{O} \\times \\frac{1\\,\\text{mol CH}_2\\text{O}}{30\\,\\text{g CH}_2\\text{O}} \\times \\frac{1\\,\\text{mol O}_2}{1\\,\\text{mol CH}_2\\text{O}} = 6.67 \\times 10^3\\,\\text{mol O}_2\n$$\n\n由于干空气中仅有 $20.95\\%$ 是 $\\text{O}_2$，所以需要的空气摩尔数为：\n\n$$\n3.18 \\times 10^4\\,\\text{mol}\n$$\n\n在 $25^\\circ\\text{C}$ 和 $1\\,\\text{atm}$ 压力下，这些空气的体积可以通过理想气体定律计算：\n\n$$\nPV = nRT\n$$\n\n其中 $R = 0.0821\\,\\text{L atm mol}^{-1}$，得出：\n\n$$\n7.78 \\times 10^5\\,\\text{L of air}\n$$\n\n实际上只有一部分空气中的氧气被转移到污水中，因此需要泵入更多的空气以提供所需的氧气。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

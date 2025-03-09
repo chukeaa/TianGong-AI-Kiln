@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "120425501451",
+  "created_at": "2025-03-07T16:28:11.310600",
+  "created_by": "TianGong",
+  "input": "某农业区土壤受镉（Cd）污染，污染浓度为5 mg/kg，超出国家标准（1 mg/kg）。该地区计划通过植物修复技术降低土壤中的镉浓度。假设一种高效植物每年能从土壤中提取0.5 mg/kg的镉，计算该植物修复该地区土壤至标准水平所需的时间。",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "246352728278",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.310600",
+    "created_by": "TianGong",
+    "output": "要计算通过植物修复技术将该地区土壤中的镉浓度降至国家标准水平所需的时间。\n首先，需要明确几个关键信息：\n 当前土壤中的镉浓度为$ 5mg/kg $。\n 国家标准为 $1mg/kg$。\n 每年植物能从土壤中提取 $0.5mg/kg$ 的镉。\n接下来，计算需要降低的镉浓度：\n需要降低的浓度 = 当前浓度 - 国家标准浓度，\n$5mg/kg - 1mg/kg = 4mg/kg$，\n然后，计算每年降低的浓度：\n每年降低的浓度 = 植物每年提取的浓度 = $0.5mg/kg$，\n最后，计算所需时间：\n所需时间（年） = 需要降低的浓度 $\\div$ 每年降低的浓度，\n$4mg/kg \\div 0.5mg/kg/年 = 8$年，\n所以，通过该植物修复该地区土壤至标准水平所需的时间为 8 年。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "ERNIE-4.0-Turbo-8K",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "178543184285",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.310600",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 5,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 5,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "该解答完整、准确且逻辑清晰，符合最高标准。其计算过程涵盖了所有必要信息，包括需要降低的镉浓度以及每年植物提取效率，最终计算结果与标准答案一致。建议在今后解题时，可以在计算过程后加入简要的推理验证，例如说明“每减少 0.5 mg/kg 需要 1 年，因此减少 4 mg/kg 需 8 年”，以进一步强化逻辑性与可读性。",
+  "repaired_output": {
+    "v": 1,
+    "id": "209250207337",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.310600",
+    "created_by": "TianGong",
+    "output": "土壤中的镉浓度为 5 mg/kg5 \\, \\text{mg/kg}5mg/kg，国家标准为 1 mg/kg1 \\, \\text{mg/kg}1mg/kg。需要通过植物修复将土壤镉浓度降低到标准水平。\n数据：\n当前土壤镉浓度： 5 mg/kg5 \\, \\text{mg/kg}5mg/kg\n国家标准： 1 mg/kg1 \\, \\text{mg/kg}1mg/kg\n每年植物提取效率： 0.5 mg/kg/year0.5 \\, \\text{mg/kg/year}0.5mg/kg/year\n计算：\n土壤中的镉浓度需要降低的幅度为：\nΔC=5−1=4 mg/kg\\Delta C = 5 - 1 = 4 \\, \\text{mg/kg}ΔC=5−1=4mg/kg\n植物每年提取镉的效率为 0.5 mg/kg/year0.5 \\, \\text{mg/kg/year}0.5mg/kg/year，因此需要的修复时间为：\nT=ΔC提取效率=40.5=8 年T = \\frac{\\Delta C}{\\text{提取效率}} = \\frac{4}{0.5} = 8 \\, \\text{年}T=提取效率ΔC​=0.54​=8年\n答：\n通过该高效植物修复土壤至国家标准水平所需时间为 8年。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

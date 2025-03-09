@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "101793605365",
+  "created_at": "2025-03-07T16:28:11.253998",
+  "created_by": "TianGong",
+  "input": "假设一个污水处理厂每天处理$100$万升含有$200 mg/L$可降解生物质（$CH_2O​$）的废水。在$25°C$条件下，计算每天需要向废水中泵入的干空气体积（氧气体积占比为$20.95\\%$），以提供降解生物质所需的氧气。",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "325305365325",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.253998",
+    "created_by": "TianGong",
+    "output": "解题思路可分为以下几步：\n\n────────────────────────────────────────────────────────\n1. 计算每日进入污水厂的可降解生物质总量\n────────────────────────────────────────────────────────\n• 处理水量：1,000,000 L/d  \n• 可降解生物质（CH₂O）浓度：200 mg/L\n\n每日可降解生物质总量 = 处理水量 × 浓度  \n                       = 1.0×10⁶ L/d × 200 mg/L  \n                       = 2.0×10⁸ mg CH₂O/d\n\n────────────────────────────────────────────────────────\n2. 计算氧的理论需求量\n────────────────────────────────────────────────────────\n氧化反应方程式：  \nCH₂O + O₂ → CO₂ + H₂O\n\n由此可见，1 mol CH₂O 理论上需 1 mol O₂。  \n• CH₂O 的摩尔质量：12 + 2×1 + 16 = 30 g/mol  \n• O₂ 的摩尔质量：32 g/mol  \n\n因此，每 1 mg CH₂O 所需的 O₂ 为：\n(32 g O₂ / 30 g CH₂O) = (32/30) mg O₂ / mg CH₂O ≈ 1.07 mg O₂ / mg CH₂O\n\n每日需要的 O₂ 质量：\n2.0×10⁸ mg CH₂O/d × (32/30) mg O₂/mg CH₂O  \n= 2.0×10⁸ × 1.0667 mg O₂  \n≈ 2.13×10⁸ mg O₂/d = 2.13×10⁵ g O₂/d = 213 kg O₂/d\n\n────────────────────────────────────────────────────────\n3. 将所需氧气质量换算为体积\n────────────────────────────────────────────────────────\n先求氧气的物质的量，再用理想气体近似求体积（25 °C，1 atm）：\n\n• 1 mol O₂ = 32 g  \n  n(O₂) = 213,000 g / (32 g/mol) ≈ 6,656 mol\n\n• 在 25 °C (298 K) 和 1 atm 下，1 mol 理想气体体积约为 24.46 L  \n  V(O₂) = n(O₂) × 24.46 L/mol  \n         ≈ 6,656 × 24.46 L  \n         ≈ 1.63×10⁵ L ≈ 163 m³\n\n────────────────────────────────────────────────────────\n4. 根据空气中氧气体积分数折算所需空气体积\n────────────────────────────────────────────────────────\n干空气中氧气体积分数约为 20.95%。为得到所需的 1.63×10⁵ L 氧气，空气体积应为：  \nV(空气) = V(O₂) / 0.2095  \n         ≈ 1.63×10⁵ L / 0.2095  \n         ≈ 7.78×10⁵ L  \n         ≈ 780 m³\n\n────────────────────────────────────────────────────────\n答：  \n在 25 °C、1 atm 条件下，为氧化每天 200 mg/L、总量 1,000,000 L 的 CH₂O，理论上需要约 163 m³ 的纯氧。若由干空气（氧气体积分数 20.95%）提供，则每日约需要 780 m³ 的空气。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "o1-2024-12-17",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "165143280612",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.253998",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 5,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 5,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "该回答在概念上和数值上都与标准答案非常接近。每一步都解释得很清楚，最终结果（约 7.78×10^5 升空气）与参考解一致。化学计量推理和单位换算都正确，理想气体定律的运用也很恰当。这值得大约 95 分的评价。若想进一步提升，解决方案可以强调假设（例如空气中氧气向水中转移的效率）并明确指出理想气体的近似条件，但总体而言推理和清晰度都很强。",
+  "repaired_output": {
+    "v": 1,
+    "id": "288753460865",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.253998",
+    "created_by": "TianGong",
+    "output": "反应式为：\n\n$$\n\\text{CH}_2\\text{O} + \\text{O}_2 \\rightarrow \\text{CO}_2 + \\text{H}_2\\text{O}\n$$\n\n100万升水中生物质的量为：\n\n$$\n2.00 \\times 10^8\\,\\text{mg} = 2.00 \\times 10^5\\,\\text{g}\n$$\n\n需要与这些生物质反应的 $\\text{O}_2$ 摩尔数为：\n\n$$\n2.00 \\times 10^5\\,\\text{g CH}_2\\text{O} \\times \\frac{1\\,\\text{mol CH}_2\\text{O}}{30\\,\\text{g CH}_2\\text{O}} \\times \\frac{1\\,\\text{mol O}_2}{1\\,\\text{mol CH}_2\\text{O}} = 6.67 \\times 10^3\\,\\text{mol O}_2\n$$\n\n由于干空气中仅有 $20.95\\%$ 是 $\\text{O}_2$，所以需要的空气摩尔数为：\n\n$$\n3.18 \\times 10^4\\,\\text{mol}\n$$\n\n在 $25^\\circ\\text{C}$ 和 $1\\,\\text{atm}$ 压力下，这些空气的体积可以通过理想气体定律计算：\n\n$$\nPV = nRT\n$$\n\n其中 $R = 0.0821\\,\\text{L atm mol}^{-1}$，得出：\n\n$$\n7.78 \\times 10^5\\,\\text{L of air}\n$$\n\n实际上只有一部分空气中的氧气被转移到污水中，因此需要泵入更多的空气以提供所需的氧气。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

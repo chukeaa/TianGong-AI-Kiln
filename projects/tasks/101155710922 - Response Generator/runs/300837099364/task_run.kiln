@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "300837099364",
+  "created_at": "2025-03-07T16:28:11.247418",
+  "created_by": "TianGong",
+  "input": "假设一个污水处理厂每天处理$100$万升含有$200 mg/L$可降解生物质（$CH_2O​$）的废水。在$25°C$条件下，计算每天需要向废水中泵入的干空气体积（氧气体积占比为$20.95\\%$），以提供降解生物质所需的氧气。",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "218130141396",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.247418",
+    "created_by": "TianGong",
+    "output": "为了计算每天需要向废水中泵入的干空气体积，我们首先需要确定降解200 mg/L可降解生物质所需的氧气量。我们可以通过以下步骤进行计算：\n\n1. **计算每天处理的生物质总量**：\n   \\[\n   \\text{每天处理的废水量} = 1000000 \\, \\text{L} = 1000 \\, \\text{m}^3\n   \\]\n   \\[\n   \\text{每天处理的生物质总量} = 200 \\, \\text{mg/L} \\times 1000000 \\, \\text{L} = 200000000 \\, \\text{mg} = 200 \\, \\text{kg}\n   \\]\n\n2. **确定降解生物质所需的氧气量**：\n   一般来说，降解生物质（如葡萄糖，化学式为 \\(\\text{C}_6\\text{H}_{12}\\text{O}_6\\)）的反应为：\n   \\[\n   \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6 \\text{O}_2 \\rightarrow 6 \\text{CO}_2 + 6 \\text{H}_2\\text{O}\n   \\]\n   从反应中可以看出，每消耗1摩尔葡萄糖需要6摩尔氧气。\n\n   计算每公斤生物质的摩尔数：\n   \\[\n   \\text{葡萄糖的摩尔质量} = 6 \\times 12 + 12 + 6 \\times 16 = 180 \\, \\text{g/mol}\n   \\]\n   \\[\n   \\text{每公斤生物质的摩尔数} = \\frac{1000 \\, \\text{g}}{180 \\, \\text{g/mol}} \\approx 5.56 \\, \\text{mol}\n   \\]\n   处理200 kg生物质所需的摩尔数：\n   \\[\n   \\text{总摩尔数} = 200 \\, \\text{kg} \\times 5.56 \\, \\text{mol/kg} \\approx 1112 \\, \\text{mol}\n   \\]\n   所需氧气的摩尔数：\n   \\[\n   \\text{所需氧气的摩尔数} = 1112 \\, \\text{mol} \\times 6 \\approx 6672 \\, \\text{mol}\n   \\]\n\n3. **计算所需氧气的体积**：\n   在标准状态下（0°C, 1 atm），1摩尔气体的体积约为22.4 L：\n   \\[\n   \\text{所需氧气的体积} = 6672 \\, \\text{mol} \\times 22.4 \\, \\text{L/mol} \\approx 149,606.4 \\, \\text{L}\n   \\]\n\n4. **计算干空气的体积**：\n   由于空气中氧气的体积占比为20.95%，我们可以使用以下公式计算所需的干空气体积：\n   \\[\n   \\text{干空气的体积} = \\frac{\\text{所需氧气的体积}}{0.2095} \n   \\]\n   \\[\n   \\text{干空气的体积} \\approx \\frac{149606.4 \\, \\text{L}}{0.2095} \\approx 714,763.1 \\, \\text{L}\n   \\]\n\n因此，每天需要向废水中泵入的干空气体积约为 **714,763.1 L**。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt-4o-mini-2024-07-18",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "180032541293",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.247418",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 4,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 4,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "此回应的最终答案（约 7.15×10^5 L）与标准答案（7.78×10^5 L）非常接近，尽管略有不同，因为使用了葡萄糖（C6H12O6）而不是更简单的 CH2O 基础，并且使用了标准的 0°C 摩尔体积（22.4 L/mol），而非 25°C 的理想气体定律。然而，总体逻辑是一致的，计算透明，结果合理。稍作调整，使用 CH2O 作为公式以及适当的 25°C 气体体积，将更接近标准答案。得分：85",
+  "repaired_output": {
+    "v": 1,
+    "id": "261929146080",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.247418",
+    "created_by": "TianGong",
+    "output": "反应式为：\n\n$$\n\\text{CH}_2\\text{O} + \\text{O}_2 \\rightarrow \\text{CO}_2 + \\text{H}_2\\text{O}\n$$\n\n100万升水中生物质的量为：\n\n$$\n2.00 \\times 10^8\\,\\text{mg} = 2.00 \\times 10^5\\,\\text{g}\n$$\n\n需要与这些生物质反应的 $\\text{O}_2$ 摩尔数为：\n\n$$\n2.00 \\times 10^5\\,\\text{g CH}_2\\text{O} \\times \\frac{1\\,\\text{mol CH}_2\\text{O}}{30\\,\\text{g CH}_2\\text{O}} \\times \\frac{1\\,\\text{mol O}_2}{1\\,\\text{mol CH}_2\\text{O}} = 6.67 \\times 10^3\\,\\text{mol O}_2\n$$\n\n由于干空气中仅有 $20.95\\%$ 是 $\\text{O}_2$，所以需要的空气摩尔数为：\n\n$$\n3.18 \\times 10^4\\,\\text{mol}\n$$\n\n在 $25^\\circ\\text{C}$ 和 $1\\,\\text{atm}$ 压力下，这些空气的体积可以通过理想气体定律计算：\n\n$$\nPV = nRT\n$$\n\n其中 $R = 0.0821\\,\\text{L atm mol}^{-1}$，得出：\n\n$$\n7.78 \\times 10^5\\,\\text{L of air}\n$$\n\n实际上只有一部分空气中的氧气被转移到污水中，因此需要泵入更多的空气以提供所需的氧气。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

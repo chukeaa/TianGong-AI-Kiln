@@ -1,0 +1,19 @@
+{
+  "v": 1,
+  "id": "154713534484",
+  "created_at": "2025-03-07T18:00:48.971047",
+  "created_by": "tiangong",
+  "dataset_id": "121571166587",
+  "task_run_config_id": "139573506140",
+  "eval_config_eval": false,
+  "input": "按照水域功能分类，《地表水环境质量标准》中监测项目适用范围和功能分别是什么？",
+  "output": "《地表水环境质量标准》根据水域功能划分为五类，每类的功能和适用范围如下：\n\n1. **Ⅰ类**：\n   - 适用范围：源头水、国家自然保护区。\n   - 主要用于饮用水源一级保护区及珍稀水生生物栖息地。\n\n2. **Ⅱ类**：\n   - 适用范围：鱼虾类越冬场、洄游通道。\n   - 适用于集中式生活饮用水水源地二级保护区和水产养殖区。\n\n3. **Ⅲ类**：\n   - 分为Ⅲ类（工业用水）和Ⅲ类（一般工业用水及人体非直接接触的娱乐用水）。\n   - 适用于工业用水区和城市景观水域，如公园湖泊等。\n\n4. **Ⅳ类**：\n   - 适用范围：一般工业废水排放接受水域、农业灌溉用水。\n   - 用于农业灌溉和工业废水处理后的排放区域。\n\n5. **Ⅴ类**：\n   - 适用范围：污水排放区、污染严重水体。\n   - 适用于接纳生活污水和工业废水的水体，如城市河道末端。\n\n监测项目包括pH值、溶解氧、化学需氧量（COD）、五日生化需氧量（BOD5）、氨氮、总磷、重金属（如铅、汞）等。各功能类别有不同的限值要求，确保水质符合特定用途需求。",
+  "intermediate_outputs": {
+    "chain_of_thought": "The model's output is detailed and aligns well with the task requirements. Here's the evaluation based on the scoring rubric:\n\n1) **Factual Correctness**: The response accurately describes the classifications of surface water according to the \"Surface Water Environmental Quality Standards,\" including the suitable ranges and functionalities for each category (I to V classes). The monitoring items listed (pH, dissolved oxygen, COD, BOD5, etc.) are relevant and accurate, contributing to an overall factual correctness.\n\n2) **Logical Reasoning**: The reasoning is structured well, presenting a clear classification system and logical connections between the grades and their respective monitoring projects. The organization of information flows logically from the classification to the monitoring items.\n\n3) **Calculation Process**: While the task doesn’t require calculations, the model organized the content in a clear manner, providing a thorough response. The steps outlined are clear and consistent with the requirements.\n\nConsidering these points, the model's output meets the requirement for factual correctness comprehensively without noticeable errors. Therefore, it deserves the highest score.\n\n**Overall Score: 5**"
+  },
+  "scores": {
+    "accuracy": 5.0,
+    "overall_rating": 5.0
+  },
+  "model_type": "eval_run"
+}

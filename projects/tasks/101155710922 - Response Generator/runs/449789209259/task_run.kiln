@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "449789209259",
+  "created_at": "2025-03-07T16:28:11.265018",
+  "created_by": "TianGong",
+  "input": "某农业区土壤受镉（$Cd$）污染，污染浓度为$5 mg/kg$，超出国家标准（$1 mg/kg$）。该地区计划通过植物修复技术降低土壤中的镉浓度。假设一种高效植物每年能从土壤中提取$0.5 mg/kg$的镉，计算该植物修复该地区土壤至标准水平所需的时间。",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "212058561699",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.265018",
+    "created_by": "TianGong",
+    "output": "已知土壤中的镉(Cd)污染浓度为5 mg/kg，目标浓度为1 mg/kg，需要去除的镉含量为(5 - 1) = 4 mg/kg。假设所选植物每年能从土壤中提取0.5 mg/kg的镉，那么修复至标准水平所需时间为：\n\n所需时间 = 需要去除的镉含量 ÷ 年提取量 = 4 (mg/kg) ÷ 0.5 (mg/kg·年⁻¹) = 8 年。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "o1-2024-12-17",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "226777116249",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.265018",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 5,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 5,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "该回复准确地遵循了从初始浓度中减去目标浓度并除以年提取率的逻辑。推理连贯，并精确地符合标准答案。若需改进，可以添加关于现场条件或植物随时间积累能力的假设或免责声明，但计算和结构是正确且完整的。",
+  "repaired_output": {
+    "v": 1,
+    "id": "227682319119",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.265018",
+    "created_by": "TianGong",
+    "output": "土壤中的镉浓度为 $5\\,\\text{mg/kg}$，国家标准为 $1\\,\\text{mg/kg}$。需要通过植物修复将土壤镉浓度降低到标准水平。\n\n**数据**：\n- 当前土壤镉浓度：$5\\,\\text{mg/kg}$\n- 国家标准：$1\\,\\text{mg/kg}$\n- 每年植物提取效率：$0.5\\,\\text{mg/kg/year}$\n\n**计算**：\n\n土壤中的镉浓度需要降低的幅度为：\n$$\\Delta C = 5 - 1 = 4\\,\\text{mg/kg}$$\n\n植物每年提取镉的效率为 $0.5\\,\\text{mg/kg/year}$，因此需要的修复时间为：\n$$T = \\frac{\\Delta C}{\\text{提取效率}} = \\frac{4}{0.5} = 8\\,\\text{年}$$\n\n**答**：\n通过该高效植物修复土壤至国家标准水平所需时间为 8年。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

@@ -1,0 +1,25 @@
+{
+  "v": 1,
+  "id": "352455483727",
+  "created_at": "2025-03-07T16:48:20.289507",
+  "created_by": "tiangong",
+  "name": "Overall Score and Task Requirements",
+  "description": "Evaluates each of the task requirements and the 'Overall Rating'.",
+  "template": "kiln_requirements",
+  "current_config_id": null,
+  "eval_set_filter_id": "all",
+  "eval_configs_filter_id": "all",
+  "output_scores": [
+    {
+      "name": "Accuracy",
+      "instruction": "- 5 Points:\n  - Factual Correctness: Completely accurate, covering all key points.\n  - Logical Reasoning: Clear and rigorous, fully aligned with reference answer.\n  - Calculation Process: Correct results with organized steps following core logic. Different methods acceptable if final result correct. Consider significant digits if results differ. Additional content fully covers standard answer.\n- 4 Points:\n  - Factual Correctness: Generally accurate with minor omissions or small errors.\n  - Logical Reasoning: Overall reasonable with occasional minor flaws.\n  - Calculation Process: Mostly correct with slight errors or unclear steps. Different methods acceptable if final result correct. Differences in significant digits considered. Additional content covers standard answer without omissions.\n- 3 Points:\n  - Factual Correctness: Noticeable errors or insufficient understanding of key concepts.\n  - Logical Reasoning: Significant gaps, partially correct conclusions.\n  - Calculation Process: Substantial errors, disorganized or missing key steps. Different methods may lead to incorrect results. Significant digits not properly considered. Additional content partially covers standard answer.\n- 2 Points:\n  - Factual Correctness: Severe errors or missing critical content.\n  - Logical Reasoning: Illogical reasoning, conclusions deviate significantly.\n  - Calculation Process: Disorganized, largely incorrect results. Different methods lead to incorrect outcomes. Significant digits not considered. Additional content does not adequately cover standard answer.\n- 1 Points:\n  - Factual Correctness: Majority incorrect or irrelevant.\n  - Logical Reasoning: Lacks reasonable reasoning, unsupported conclusions.\n  - Calculation Process: Entirely incorrect or missing. Different methods do not produce correct results. Significant digits ignored. Additional content fails to cover standard answer.`,\n",
+      "type": "five_star"
+    },
+    {
+      "name": "Overall Rating",
+      "instruction": "Evaluate the overall quality of the output.",
+      "type": "five_star"
+    }
+  ],
+  "model_type": "eval"
+}

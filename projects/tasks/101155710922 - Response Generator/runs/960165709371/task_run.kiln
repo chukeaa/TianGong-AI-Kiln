@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "960165709371",
+  "created_at": "2025-03-07T16:28:11.215164",
+  "created_by": "TianGong",
+  "input": "假设一个污水处理厂每天处理$100$万升含有$200 mg/L$可降解生物质（$CH_2O​$）的废水。在$25°C$条件下，计算每天需要向废水中泵入的干空气体积（氧气体积占比为$20.95\\%$），以提供降解生物质所需的氧气。",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "877298391379",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.215164",
+    "created_by": "TianGong",
+    "output": "要计算每天需要向废水中泵入的干空气体积，以提供降解生物质所需的氧气，我们可以按照以下步骤进行计算：\n\n---\n\n### 1. **计算可降解生物质的质量**\n废水中可降解生物质的浓度为200 mg/L，每天处理100万升废水，因此每天需要降解的生物质质量为：\n\\[\n\\text{生物质质量} = 200 \\, \\text{mg/L} \\times 1,000,000 \\, \\text{L} = 200,000,000 \\, \\text{mg} = 200 \\, \\text{kg}\n\\]\n\n---\n\n### 2. **确定生物质降解的化学方程式**\n假设可降解生物质 \\(\\{CH_2O\\}\\) 完全氧化为 \\(CO_2\\) 和 \\(H_2O\\)，其化学方程式为：\n\\[\n\\{CH_2O\\} + O_2 \\rightarrow CO_2 + H_2O\n\\]\n根据化学方程式，1 mol \\(\\{CH_2O\\}\\) 需要 1 mol \\(O_2\\) 进行降解。\n\n---\n\n### 3. **计算生物质的摩尔数**\n\\(\\{CH_2O\\}\\) 的摩尔质量为：\n\\[\n\\text{摩尔质量} = 12 \\, (\\text{C}) + 2 \\times 1 \\, (\\text{H}) + 16 \\, (\\text{O}) = 30 \\, \\text{g/mol}\n\\]\n因此，200 kg \\(\\{CH_2O\\}\\) 的摩尔数为：\n\\[\n\\text{摩尔数} = \\frac{200,000 \\, \\text{g}}{30 \\, \\text{g/mol}} = 6,666.67 \\, \\text{mol}\n\\]\n\n---\n\n### 4. **计算所需的氧气量**\n根据化学方程式，1 mol \\(\\{CH_2O\\}\\) 需要 1 mol \\(O_2\\)，因此需要 6,666.67 mol \\(O_2\\)。\n\n在标准条件下（25°C，1 atm），1 mol 气体的体积为 24.45 L。因此，所需氧气的体积为：\n\\[\n\\text{氧气体积} = 6,666.67 \\, \\text{mol} \\times 24.45 \\, \\text{L/mol} = 163,000 \\, \\text{L} = 163 \\, \\text{m}^3\n\\]\n\n---\n\n### 5. **计算所需的干空气体积**\n空气中氧气的体积占比为 20.95%，因此所需的干空气体积为：\n\\[\n\\text{干空气体积} = \\frac{163 \\, \\text{m}^3}{0.2095} = 778 \\, \\text{m}^3\n\\]\n\n---\n\n### **最终答案**\n每天需要向废水中泵入的干空气体积为 **778 立方米**。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "Deepseek-V3",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "307614778090",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.215164",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 5,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 5,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "这个解决方案结构良好，遵循了标准的化学计量学和理想气体定律的推理，与参考答案得出的最终结果(约为7.78×10^5升或778立方米的空气)基本一致。分步计算既一致又清晰，仅在四舍五入和最终呈现上存在轻微差异。该答案正确运用了1:1的化学计量比，计算了底物和氧气的摩尔数，并恰当地使用了空气的含氧比例。该结果整齐地匹配了标准答案的核心结论，但省略了关于氧气传递效率的实际考虑。总体上，结果完整且推理准确，值得一个90–100的高分。\n\n进一步增强答案的建议：\n• 强调在实际污水处理中，并非空气中的所有氧气都溶解进入废水中，因此理论计算之外可能需要更多的空气。\n• 明确关于25°C下理想气体体积的任何假设(例如，使用24.45升/摩尔)，并强调因不同压力或温度假设可能出现的细微差异。\n• 强调四舍五入可能导致与标准参考答案之间的小差异。\n总体而言，逻辑框架明确，最终结果与标准答案高度一致。",
+  "repaired_output": {
+    "v": 1,
+    "id": "229042689367",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.215164",
+    "created_by": "TianGong",
+    "output": "反应式为：\n\n$$\n\\text{CH}_2\\text{O} + \\text{O}_2 \\rightarrow \\text{CO}_2 + \\text{H}_2\\text{O}\n$$\n\n100万升水中生物质的量为：\n\n$$\n2.00 \\times 10^8\\,\\text{mg} = 2.00 \\times 10^5\\,\\text{g}\n$$\n\n需要与这些生物质反应的 $\\text{O}_2$ 摩尔数为：\n\n$$\n2.00 \\times 10^5\\,\\text{g CH}_2\\text{O} \\times \\frac{1\\,\\text{mol CH}_2\\text{O}}{30\\,\\text{g CH}_2\\text{O}} \\times \\frac{1\\,\\text{mol O}_2}{1\\,\\text{mol CH}_2\\text{O}} = 6.67 \\times 10^3\\,\\text{mol O}_2\n$$\n\n由于干空气中仅有 $20.95\\%$ 是 $\\text{O}_2$，所以需要的空气摩尔数为：\n\n$$\n3.18 \\times 10^4\\,\\text{mol}\n$$\n\n在 $25^\\circ\\text{C}$ 和 $1\\,\\text{atm}$ 压力下，这些空气的体积可以通过理想气体定律计算：\n\n$$\nPV = nRT\n$$\n\n其中 $R = 0.0821\\,\\text{L atm mol}^{-1}$，得出：\n\n$$\n7.78 \\times 10^5\\,\\text{L of air}\n$$\n\n实际上只有一部分空气中的氧气被转移到污水中，因此需要泵入更多的空气以提供所需的氧气。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

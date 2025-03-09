@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "241643477759",
+  "created_at": "2025-03-07T16:28:11.227229",
+  "created_by": "TianGong",
+  "input": "某城市的$100 kg$混合生活垃圾，其物理组成为：食品垃圾$25 kg$、废纸$40 kg$、废塑料$13 kg$、破布$5 kg$、废木材$2 kg$，其余为土、灰、砖等不燃物质。已知各组分的低位热值如下：食品垃圾低位热值：$3650 kJ/kg$；废纸低位热值：$13750 kJ/kg$；废塑料低位热值：$32570 kJ/kg$；破布低位热值：$15450 kJ/kg$；废木材低位热值：$16610 kJ/kg$；土、灰、砖等热值不计。要求：估算该垃圾焚烧处理所需的理论空气量。假设$1 kg$碳燃烧所需的理论空气量为$8.89 m^3$，发热量为$32825 kJ$（即$0.00027 m^3/kJ$）；$1 kg$氢燃烧所需的理论空气量为$26.5 m^3$，发热量为$120220 kJ$（即$0.00022 m^3/kJ$）。在估算时，假设垃圾中主要的可燃成分是碳。",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "197608015968",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.227229",
+    "created_by": "TianGong",
+    "output": "要估算垃圾焚烧处理所需的理论空气量，我们需要以下步骤：\n\n---\n\n### Step 1: 计算垃圾总的低位热值\n混合垃圾总的低位热值可以根据各组分的质量和低位热值计算：\n\\[\nQ_{\\text{总}} = \\sum (m_i \\cdot q_i)\n\\]\n其中，\\( m_i \\) 是各组分的质量，\\( q_i \\) 是各组分的低位热值。\n\n已知：\n\\[\n\\begin{aligned}\n& m_{\\text{食品垃圾}} = 25 \\, \\text{kg}, \\, q_{\\text{食品垃圾}} = 3650 \\, \\text{kJ/kg} \\\\\n& m_{\\text{废纸}} = 40 \\, \\text{kg}, \\, q_{\\text{废纸}} = 13750 \\, \\text{kJ/kg} \\\\\n& m_{\\text{废塑料}} = 13 \\, \\text{kg}, \\, q_{\\text{废塑料}} = 32570 \\, \\text{kJ/kg} \\\\\n& m_{\\text{破布}} = 5 \\, \\text{kg}, \\, q_{\\text{破布}} = 15450 \\, \\text{kJ/kg} \\\\\n& m_{\\text{废木材}} = 2 \\, \\text{kg}, \\, q_{\\text{废木材}} = 16610 \\, \\text{kJ/kg} \\\\\n& \\text{土、灰、砖等低位热值不计} \\\\\n\\end{aligned}\n\\]\n\n计算：\n\\[\n\\begin{aligned}\nQ_{\\text{总}} &= (25 \\cdot 3650) + (40 \\cdot 13750) + (13 \\cdot 32570) + (5 \\cdot 15450) + (2 \\cdot 16610) \\\\\n&= 91250 + 550000 + 423410 + 77250 + 33220 \\\\\n&= 1177130 \\, \\text{kJ}\n\\end{aligned}\n\\]\n\n垃圾的总低位热值为：\n\\[\nQ_{\\text{总}} = 1177130 \\, \\text{kJ}\n\\]\n\n---\n\n### Step 2: 根据假设计算所需理论空气量\n假设垃圾中主要的可燃成分是碳，且其发热量为 32825 kJ/kg，1 kg 碳燃烧所需的理论空气量为 8.89 m³。\n\n每 kJ 的碳燃烧所需空气量为：\n\\[\n\\text{空气量/kJ} = \\frac{1 \\, \\text{kg碳的空气量}}{1 \\, \\text{kg碳的发热量}} = \\frac{8.89}{32825} = 0.00027 \\, \\text{m³/kJ}\n\\]\n\n垃圾焚烧所需的理论空气量为：\n\\[\n\\text{理论空气量} = Q_{\\text{总}} \\cdot \\text{空气量/kJ}\n\\]\n\n计算：\n\\[\n\\text{理论空气量} = 1177130 \\cdot 0.00027 = 317.8161 \\, \\text{m³}\n\\]\n\n---\n\n### Step 3: 总结\n焚烧处理该混合垃圾所需的理论空气量为：\n\\[\n\\boxed{317.82 \\, \\text{m³}}\n\\]",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt-4o-2024-11-20",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "737473730901",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.227229",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 5,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 5,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "回应与标准答案高度一致。它详细解释了每一个步骤——从给定的成分中计算出总热值，然后乘以每热量对应的空气比率（0.00027 m³/kJ），最终得到约317.82 m³，这与标准答案的约317 m³一致。计算过程清晰、正确。从热值的求和到最终乘以经过验证的系数，逻辑上保持连贯。回应所展现的细节和清晰度值得赞扬并符合要求。一个小建议是，可以明确提到估算值是近似的，因为它基于碳是主要可燃成分的假设，而杂质或其他元素可能略微影响最终结果。不过，最终答案仍然有充分依据且准确。根据提供的评分标准，这个回答的事实正确性、扎实的逻辑推理和全面的计算过程使其可以得分在90–100范围内。一个合理的得分是95分。",
+  "repaired_output": {
+    "v": 1,
+    "id": "147355531374",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.227229",
+    "created_by": "TianGong",
+    "output": "固体废物热值主要取决于碳和氢的含量，而碳和氢的理论空气量与发热量的比值相似。因此，未知元素组成时，可用理论空气量与热值的经验比值进行估算。1kg碳燃烧所需的理论空气量为8.89 m3，发热量为32825 kJ（0.00027m3/kJ）；1 kg氢燃烧所需理论空气量为26.5 m3，发热量为120220 kJ（0.00022m3/kJ）。垃圾中的碳元素含量较高，因此以碳的理论空气量与发热量比值0.00027 m3/kJ估算，则100 kg生活垃圾焚烧所需的理论空气量为317 m3。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}
