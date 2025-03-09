@@ -1,0 +1,18 @@
+{
+  "v": 1,
+  "id": "277715264465",
+  "created_at": "2025-03-07T16:49:58.402672",
+  "created_by": "tiangong",
+  "name": "Jade Serpent",
+  "model_name": "gpt_4o_mini",
+  "model_provider": "openai",
+  "config_type": "llm_as_judge",
+  "properties": {
+    "eval_steps": [
+      "Does the model's output align to the following requirement: Accuracy\nRequirement Instruction: - 5 Points:\n  - Factual Correctness: Completely accurate, covering all key points.\n  - Logical Reasoning: Clear and rigorous, fully aligned with reference answer.\n  - Calculation Process: Correct results with organized steps following core logic. Different methods acceptable if final result correct. Consider significant digits if results differ. Additional content fully covers standard answer.\n- 4 Points:\n  - Factual Correctness: Generally accurate with minor omissions or small errors.\n  - Logical Reasoning: Overall reasonable with occasional minor flaws.\n  - Calculation Process: Mostly correct with slight errors or unclear steps. Different methods acceptable if final result correct. Differences in significant digits considered. Additional content covers standard answer without omissions.\n- 3 Points:\n  - Factual Correctness: Noticeable errors or insufficient understanding of key concepts.\n  - Logical Reasoning: Significant gaps, partially correct conclusions.\n  - Calculation Process: Substantial errors, disorganized or missing key steps. Different methods may lead to incorrect results. Significant digits not properly considered. Additional content partially covers standard answer.\n- 2 Points:\n  - Factual Correctness: Severe errors or missing critical content.\n  - Logical Reasoning: Illogical reasoning, conclusions deviate significantly.\n  - Calculation Process: Disorganized, largely incorrect results. Different methods lead to incorrect outcomes. Significant digits not considered. Additional content does not adequately cover standard answer.\n- 1 Points:\n  - Factual Correctness: Majority incorrect or irrelevant.\n  - Logical Reasoning: Lacks reasonable reasoning, unsupported conclusions.\n  - Calculation Process: Entirely incorrect or missing. Different methods do not produce correct results. Significant digits ignored. Additional content fails to cover standard answer.`,\n\nRequirement Priority (0 is highest, 3 is lowest): 0",
+      "Given prior thinking and priorities, what would be an appropriate overall score for this task, from 1 to 5, with 1 being the worst and 5 being the best?"
+    ],
+    "task_description": "Answer this given question."
+  },
+  "model_type": "eval_config"
+}

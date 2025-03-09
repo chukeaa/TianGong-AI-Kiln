@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "176014603220",
+  "created_at": "2025-03-07T16:28:11.198742",
+  "created_by": "TianGong",
+  "input": "某城市的$100 kg$混合生活垃圾，其物理组成为：食品垃圾$25 kg$、废纸$40 kg$、废塑料$13 kg$、破布$5 kg$、废木材$2 kg$，其余为土、灰、砖等不燃物质。已知各组分的低位热值如下：食品垃圾低位热值：$3650 kJ/kg$；废纸低位热值：$13750 kJ/kg$；废塑料低位热值：$32570 kJ/kg$；破布低位热值：$15450 kJ/kg$；废木材低位热值：$16610 kJ/kg$；土、灰、砖等热值不计。要求：估算该垃圾焚烧处理所需的理论空气量。假设$1 kg$碳燃烧所需的理论空气量为$8.89 m^3$，发热量为$32825 kJ$（即$0.00027 m^3/kJ$）；$1 kg$氢燃烧所需的理论空气量为$26.5 m^3$，发热量为$120220 kJ$（即$0.00022 m^3/kJ$）。在估算时，假设垃圾中主要的可燃成分是碳。",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "244368971990",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.198742",
+    "created_by": "TianGong",
+    "output": "要估算该垃圾焚烧处理所需的理论空气量，我们需要按照以下步骤进行计算：\n\n### 1. 计算各组分的质量\n根据题目描述，混合生活垃圾的总质量为100 kg，各组分的质量如下：\n- 食品垃圾：25 kg\n- 废纸：40 kg\n- 废塑料：13 kg\n- 破布：5 kg\n- 废木材：2 kg\n- 土、灰、砖等不燃物质：100 - (25 + 40 + 13 + 5 + 2) = 15 kg\n\n### 2. 计算各组分的低位热值\n根据题目给出的低位热值，计算各组分的总热值：\n- 食品垃圾：25 kg × 3650 kJ/kg = 91250 kJ\n- 废纸：40 kg × 13750 kJ/kg = 550000 kJ\n- 废塑料：13 kg × 32570 kJ/kg = 423410 kJ\n- 破布：5 kg × 15450 kJ/kg = 77250 kJ\n- 废木材：2 kg × 16610 kJ/kg = 33220 kJ\n- 土、灰、砖等不燃物质：15 kg × 0 kJ/kg = 0 kJ\n\n### 3. 计算总热值\n将各组分的总热值相加，得到混合生活垃圾的总热值：\n\\[\n\\text{总热值} = 91250 + 550000 + 423410 + 77250 + 33220 = 1175130 \\text{ kJ}\n\\]\n\n### 4. 计算理论空气量\n根据题目假设，垃圾中主要的可燃成分是碳，因此我们可以使用碳燃烧所需的理论空气量来估算总空气量。\n\n1 kg碳燃烧所需的理论空气量为8.89 m³，发热量为32825 kJ。因此，每kJ热值对应的理论空气量为：\n\\[\n\\frac{8.89 \\text{ m}^3}{32825 \\text{ kJ}} = 0.00027 \\text{ m}^3/\\text{kJ}\n\\]\n\n因此，总理论空气量为：\n\\[\n\\text{总理论空气量} = 1175130 \\text{ kJ} \\times 0.00027 \\text{ m}^3/\\text{kJ} = 317.2851 \\text{ m}^3\n\\]\n\n### 5. 最终结果\n该垃圾焚烧处理所需的理论空气量约为 **317.29 m³**。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "Deepseek-V3",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "338930055390",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.198742",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 5,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 5,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "该响应提供了一个清晰、正确的解决方案，严格遵循参考答案的逻辑和计算步骤。它正确地分解了每个成分的质量，计算了总低位发热值，并应用基于碳的理论空气与热值比，得出了约317立方米的空气。这一推理与标准答案高度一致，计算全面且解释得当。作为进一步改进的建议，可以明确指出可能的实际情况变化（例如，水分含量的变化，存在诸如氢气等其他可燃物），以加强逻辑论证。总体而言，该解决方案根据标准达到了事实正确性、逻辑清晰度和完整性的最高标准。",
+  "repaired_output": {
+    "v": 1,
+    "id": "755013333993",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.198742",
+    "created_by": "TianGong",
+    "output": "固体废物热值主要取决于碳和氢的含量，而碳和氢的理论空气量与发热量的比值相似。因此，未知元素组成时，可用理论空气量与热值的经验比值进行估算。1kg碳燃烧所需的理论空气量为8.89 m3，发热量为32825 kJ（0.00027m3/kJ）；1 kg氢燃烧所需理论空气量为26.5 m3，发热量为120220 kJ（0.00022m3/kJ）。垃圾中的碳元素含量较高，因此以碳的理论空气量与发热量比值0.00027 m3/kJ估算，则100 kg生活垃圾焚烧所需的理论空气量为317 m3。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

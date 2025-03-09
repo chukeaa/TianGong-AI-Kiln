@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "303374767990",
+  "created_at": "2025-03-07T16:28:11.231404",
+  "created_by": "TianGong",
+  "input": "假如当日北京市环境空气质量首要污染物为$PM_{2.5}$，当日$PM_{2.5}$的24小时平均浓度为$100$微克/立方米。请计算当日北京空气质量指数（$AQI$）。",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "982700067319",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.231404",
+    "created_by": "TianGong",
+    "output": "根据我国《环境空气质量指数（AQI）技术规定》（HJ 633-2012），空气质量指数（AQI）的计算需要根据污染物的浓度和其对应的分指数区间进行线性插值计算。\n\n### 1. PM2.5浓度等级和AQI区间对照表\n以下是《环境空气质量指数（AQI）技术规定》中PM2.5（细颗粒物）的分指数区间和浓度区间：\n\n| AQI区间      | PM2.5浓度范围（单位：μg/m³） | 污染级别        |\n|--------------|------------------------------|-----------------|\n| 0-50         | 0-35                        | 优              |\n| 51-100       | 36-75                       | 良              |\n| 101-150      | 76-115                      | 轻度污染        |\n| 151-200      | 116-150                     | 中度污染        |\n| 201-300      | 151-250                     | 重度污染        |\n| 301-500      | >250                        | 严重污染        |\n\n当PM2.5的24小时平均浓度为100 μg/m³时，对应的浓度范围是76-115 μg/m³，AQI区间为101-150（轻度污染）。\n\n### 2. 线性插值计算公式\n当污染物浓度在某个区间内时，AQI采用线性插值计算：\n\\[\nI = \\frac{{I_{high} - I_{low}}}{{C_{high} - C_{low}}} \\times (C - C_{low}) + I_{low}\n\\]\n其中：\n- \\( I \\) 是AQI；\n- \\( C \\) 是污染物的实际浓度；\n- \\( I_{high} \\) 和 \\( I_{low} \\) 是污染物浓度所在区间对应的AQI上下限；\n- \\( C_{high} \\) 和 \\( C_{low} \\) 是污染物浓度所在区间的上下限。\n\n### 3. 代入数据\n根据表格：\n- \\( I_{high} = 150 \\)，\\( I_{low} = 101 \\)；\n- \\( C_{high} = 115 \\)，\\( C_{low} = 76 \\)；\n- \\( C = 100 \\)。\n\n代入公式：\n\\[\nI = \\frac{{150 - 101}}{{115 - 76}} \\times (100 - 76) + 101\n\\]\n\n计算：\n\\[\nI = \\frac{{49}}{{39}} \\times 24 + 101\n\\]\n\\[\nI = 1.256 \\times 24 + 101\n\\]\n\\[\nI \\approx 30.144 + 101 = 131.144\n\\]\n取整数，\\( I = 131 \\)。\n\n### 4. 结果\n当PM2.5的24小时平均浓度为100 μg/m³时，北京当日的空气质量指数（AQI）为 **131**，空气质量为 **轻度污染**。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt-4o-2024-11-20",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "526358148373",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.231404",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 4,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 4,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "推理清晰且基本正确，但将第三个区间的下限使用了101，而不是100，并且明显是四舍五入至最接近的整数。官方标准和参考解法规定使用100作为下限并向上取整，由此得出的结果是132。而结果131虽然接近，但并未完全符合标准答案。总体上，这个回答存在轻微的不一致性，但仍显示出良好的理解能力。确保所有边界值和规定的取整方法符合要求将提高准确性。一个适当的得分可能是在中高80分左右。",
+  "repaired_output": {
+    "v": 1,
+    "id": "524727329042",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.231404",
+    "created_by": "TianGong",
+    "output": "根据中国环境保护部发布的《环境空气质量指数（AQI）技术规定》（HJ 633-2012），我们可以通过$PM_{2.5}$的24小时平均浓度来计算空气质量指数（AQI）。\n首先确定$PM_{2.5}$的浓度区间。根据规定，找到$PM_{2.5}$浓度$100$微克/立方米所在的区间。$100$微克/立方米位于第三等级的区间，即$75-115$微克/立方米。\n计算$PM_{2.5}$的空气质量分指数$IAQI$的公式为： $IAQI = (IAQIH- IAQIL) / (BPH - BPL) * (C - BPL) + IAQIL$ 其中$IAQIH$：该浓度区间对应的$AQI$上限；$IAQIL$：该浓度区间对应的$AQI$下限；$BPH$：该浓度区间的上限；$BPL$：该浓度区间的下限；$C$：$PM_{2.5}$的实际浓度。\n对于$PM_{2.5}$浓度$100$微克/立方米的区间，我们有：\n $IAQIH = 150$，$IAQIL = 100$，$BPH = 115$，$BPL = 75$，$C = 100$，将这些值代入公式计算$PM_{2.5}$的空气质量分指数$IAQI： IAQI = (150 - 100) / (115 - 75) * (100 - 75) + 100 ≈ 131.25$。根据《环境空气质量指数（AQI）技术规定》（HJ 633-2012）第6.2条，计算结果应全部进位取整数，不保留小数。因此当日北京市$PM_{2.5}$的空气质量分指数$IAQI =132$。因为已知$PM_{2.5}$是当天的首要污染物，所以当日北京市的$AQI等于$PM_{2.5}$的空气质量分指数$IAQI$，即当日北京的空气质量指数（$AQI$）为$132$。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

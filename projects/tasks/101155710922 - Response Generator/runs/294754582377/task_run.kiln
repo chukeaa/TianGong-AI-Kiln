@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "294754582377",
+  "created_at": "2025-03-07T16:28:11.259018",
+  "created_by": "TianGong",
+  "input": "在颗粒物采样中,如何通过流量校准确保采样器在正确的工作点上？请详细说明流量校准的步骤和计算公式。",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "258494366432",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.259018",
+    "created_by": "TianGong",
+    "output": "在颗粒物采样中，流量校准是确保采样器在正确的工作点上进行有效采样的重要步骤。以下是流量校准的详细步骤和相关计算公式。\n\n### 流量校准步骤\n\n1. **设备准备**：\n   - 确保采样器、流量计（如涡轮流量计、皮托管等）、标准气源和适当的连接管道处于良好状态。\n\n2. **选择合适的流量计**：\n   - 选择能测量所需流量范围的流量计，并确保其准确度符合标准要求。\n\n3. **设置采样器**：\n   - 将颗粒物采样器连接到流量计和气源上，确保所有连接处密封良好，以防泄漏。\n\n4. **预热设备**：\n   - 如果采样器或流量计需要预热，请按照设备说明进行预热，以确保其工作稳定。\n\n5. **调节流量**：\n   - 通过调节阀门或控制系统调整气体流量，达到预定的流量值。记录此时流量计的读数。\n\n6. **流量校准**：\n   - 按照以下步骤进行流量校准：\n     - 选择几个不同的流量点（通常包括工作流量点及其上下浮动范围），例如：100 L/min, 150 L/min, 200 L/min 等。\n     - 在每个流量点上，使用流量计进行测量，并记录实际流量。\n\n7. **比较与计算**：\n   - 计算每个流量点的实际流量与理论流量的偏差，使用以下公式：\n     \\[\n     \\text{偏差} (\\%) = \\left( \\frac{\\text{实际流量} - \\text{理论流量}}{\\text{理论流量}} \\right) \\times 100\\%\n     \\]\n   - 记录每个流量点的偏差，以便后续分析。\n\n8. **调整标定**：\n   - 如果发现偏差超出允许范围，可以通过调整流量计的校准参数或重新校准流量计来确保其准确性。\n\n9. **记录校准结果**：\n   - 完成校准后，将每个流量点的理论流量、实际流量及偏差记录在校准报告中，以便将来参考。\n\n10. **定期校准**：\n    - 建立定期校准的计划，确保在使用过程中保持流量计的准确性。建议每半年或每次重大维护后进行校准。\n\n### 计算公式\n\n在流量校准中，主要使用的公式包括：\n\n- **偏差计算公式**：\n  \\[\n  \\text{偏差} (\\%) = \\left( \\frac{\\text{实际流量} - \\text{理论流量}}{\\text{理论流量}} \\right) \\times 100\\%\n  \\]\n\n- **平均流量计算**（如果需要对多个测量值取平均）：\n  \\[\n  \\text{平均流量} = \\frac{\\sum \\text{实际流量}}{n}\n  \\]\n  其中 \\( n \\) 是测量次数。\n\n通过上述步骤和公式，可以确保颗粒物采样器在正确的工作点上进行有效的流量采样，从而提高采样结果的准确性和可靠性。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt-4o-mini-2024-07-18",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "219087349863",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.259018",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 3,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 3,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "该回答仅阐述了流量校准的一般步骤，缺乏对标准答案中至关重要的具体公式以及温度、压力或标准条件的引用。具体公式（如 QH、QM 及其标准条件转换、修正因子 Y 和最终压差计算）缺失，因此答案仅部分涵盖了所需的方法论。为了改进逻辑流程，回答应当包含这些缺失的步骤，提供必要的计算细节，并解释每个公式的应用方式，以便与参考答案对温度、压力和修正因子计算的规范相一致。",
+  "repaired_output": {
+    "v": 1,
+    "id": "187727627526",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.259018",
+    "created_by": "TianGong",
+    "output": "流量校准是确保颗粒物采样器工作在规定的采气流量下的过程，以下是详细的步骤和计算公式：\n\n1. 确定抽气速度：\n   首先，测量采样器采样口的抽气速度 $W$，一般为 $0.3m/s$。\n\n2. 计算工作点流量：\n   对大流量采样器，工作点流量 $Q_H$ 为 $1.05 m³/min$。\n   \n   对于中流量采样器，工作点流量 $Q_M$ 的计算公式为：\n   $$ Q_M = 60000 \\times W \\times A $$\n   其中 $A$ 为采样器采样口的截面面积（单位：$m²$）。\n\n3. 换算成标况流量：\n   将 $Q_H$ 或 $Q_M$ 换算成标况下的流量 $Q_{HN}$（$m³/min$）或 $Q_{MN}$（$L/min$），计算公式为：\n   $$ Q_{HN} = Q_H \\times \\frac{P_{TN}}{T_{PN}} $$\n   $$ Q_{MN} = Q_M \\times \\frac{P_{TN}}{T_{PN}} $$\n   其中 $T$ 为测试现场的月平均温度（$K$），$P_N$ 为标况压力（$101.3kPa$），$T_N$ 为标况温度（$273K$），$P$ 为测试现场的平均大气压（$kPa$）。\n\n4. 计算修正项：\n   将 $Q_N$ 用 $Q_{HN}$ 或 $Q_{MN}$ 代入，求出修正项 $Y$，计算公式为：\n   $$ Y = BQ_N + A $$\n   其中 $B$ 和 $A$ 由孔口流量计的标定部门提供。\n\n5. 计算压差：\n   最后，计算压差 $\\Delta H$（$Pa$），公式为：\n   $$ \\Delta H = Y² \\times \\frac{P_N \\times T}{P \\times T_N} $$\n\n通过这些步骤，可以确保采样器在正式采样前处于正确的工作点上。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

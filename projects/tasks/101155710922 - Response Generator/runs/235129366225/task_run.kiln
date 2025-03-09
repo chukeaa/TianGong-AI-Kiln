@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "235129366225",
+  "created_at": "2025-03-07T16:28:11.216163",
+  "created_by": "TianGong",
+  "input": "假设一个污水处理厂每天处理$100$万升含有$200 mg/L$可降解生物质（$CH_2O​$）的废水。在$25°C$条件下，计算每天需要向废水中泵入的干空气体积（氧气体积占比为$20.95\\%$），以提供降解生物质所需的氧气。",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "307200837876",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.216163",
+    "created_by": "TianGong",
+    "output": "要计算每天需要向废水中泵入的干空气体积，以提供降解生物质所需的氧气，我们可以按照以下步骤进行：\n\n1. **计算每天所需的氧气量**：\n   - 每天处理的废水量 = 100万升 = \\(10^6\\) L\n   - 废水中可降解生物质浓度 = 200 mg/L\n   - 每天可降解生物质总量 = \\(200 \\text{ mg/L} \\times 10^6 \\text{ L} = 200 \\times 10^6 \\text{ mg} = 200 \\text{ kg}\\)\n\n2. **确定降解生物质所需的氧气量**：\n   - 假设可降解生物质为 \\(\\text{CH}_2\\text{O}\\)，其完全氧化反应为：\n     \\[\n     \\text{CH}_2\\text{O} + \\text{O}_2 \\rightarrow \\text{CO}_2 + \\text{H}_2\\text{O}\n     \\]\n   - 1 mol \\(\\text{CH}_2\\text{O}\\) 需要 1 mol \\(\\text{O}_2\\)\n   - \\(\\text{CH}_2\\text{O}\\) 的摩尔质量 = 12 (C) + 2 (H) + 16 (O) = 30 g/mol\n   - 200 kg \\(\\text{CH}_2\\text{O}\\) 的物质的量 = \\(\\frac{200 \\times 10^3 \\text{ g}}{30 \\text{ g/mol}} = \\frac{200 \\times 10^3}{30} \\text{ mol} = \\frac{20000}{3} \\text{ mol}\\)\n\n3. **计算所需氧气的物质的量**：\n   - 所需 \\(\\text{O}_2\\) 的物质的量 = \\(\\frac{20000}{3} \\text{ mol}\\)\n\n4. **计算所需氧气的体积**（在标准状况下，1 mol 气体的体积为 22.4 L）：\n   - 所需 \\(\\text{O}_2\\) 的体积 = \\(\\frac{20000}{3} \\text{ mol} \\times 22.4 \\text{ L/mol} = \\frac{20000 \\times 22.4}{3} \\text{ L} = \\frac{448000}{3} \\text{ L} \\approx 149333.33 \\text{ L}\\)\n\n5. **计算所需干空气的体积**（空气中氧气体积占比为 20.95%）：\n   - 所需干空气的体积 = \\(\\frac{\\text{所需氧气的体积}}{\\text{氧气体积占比}} = \\frac{149333.33 \\text{ L}}{0.2095} \\approx 712500 \\text{ L}\\)\n\n因此，每天需要向废水中泵入约 712,500 升的干空气，以提供降解生物质所需的氧气。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "glm-4-plus",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "616411966799",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.216163",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 4,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 4,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "该解决方案与标准方法紧密一致，并得出了一个相似的最终空气体积需求，主要区别在于使用了标准状况下的体积（22.4 L/mol，0°C），而非在25°C下应用理想气体方程。虽然最终空气量略低于标准答案（712,500升对约778,000升），但整体推理连贯且执行得当。为了进一步提升逻辑精确度，可以明确在25°C下应用理想气体方程（或清楚地说明使用了哪些条件），并确保逐步计算中引用相关的假设和气体体积条件。这将使推理更贴近标准答案，并得出更为准确的所需空气最终体积。",
+  "repaired_output": {
+    "v": 1,
+    "id": "106199365566",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.216163",
+    "created_by": "TianGong",
+    "output": "反应式为：\n\n$$\n\\text{CH}_2\\text{O} + \\text{O}_2 \\rightarrow \\text{CO}_2 + \\text{H}_2\\text{O}\n$$\n\n100万升水中生物质的量为：\n\n$$\n2.00 \\times 10^8\\,\\text{mg} = 2.00 \\times 10^5\\,\\text{g}\n$$\n\n需要与这些生物质反应的 $\\text{O}_2$ 摩尔数为：\n\n$$\n2.00 \\times 10^5\\,\\text{g CH}_2\\text{O} \\times \\frac{1\\,\\text{mol CH}_2\\text{O}}{30\\,\\text{g CH}_2\\text{O}} \\times \\frac{1\\,\\text{mol O}_2}{1\\,\\text{mol CH}_2\\text{O}} = 6.67 \\times 10^3\\,\\text{mol O}_2\n$$\n\n由于干空气中仅有 $20.95\\%$ 是 $\\text{O}_2$，所以需要的空气摩尔数为：\n\n$$\n3.18 \\times 10^4\\,\\text{mol}\n$$\n\n在 $25^\\circ\\text{C}$ 和 $1\\,\\text{atm}$ 压力下，这些空气的体积可以通过理想气体定律计算：\n\n$$\nPV = nRT\n$$\n\n其中 $R = 0.0821\\,\\text{L atm mol}^{-1}$，得出：\n\n$$\n7.78 \\times 10^5\\,\\text{L of air}\n$$\n\n实际上只有一部分空气中的氧气被转移到污水中，因此需要泵入更多的空气以提供所需的氧气。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

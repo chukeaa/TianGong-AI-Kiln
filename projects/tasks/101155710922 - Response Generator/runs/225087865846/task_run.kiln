@@ -1,0 +1,72 @@
+{
+  "v": 1,
+  "id": "225087865846",
+  "created_at": "2025-03-07T16:28:11.287365",
+  "created_by": "TianGong",
+  "input": "某城市的$100 kg$混合生活垃圾，其物理组成为：食品垃圾$25 kg$、废纸$40 kg$、废塑料$13 kg$、破布$5 kg$、废木材$2 kg$，其余为土、灰、砖等不燃物质。已知各组分的低位热值如下：食品垃圾低位热值：$3650 kJ/kg$；废纸低位热值：$13750 kJ/kg$；废塑料低位热值：$32570 kJ/kg$；破布低位热值：$15450 kJ/kg$；废木材低位热值：$16610 kJ/kg$；土、灰、砖等热值不计。要求：估算该垃圾焚烧处理所需的理论空气量。假设$1 kg$碳燃烧所需的理论空气量为$8.89 m^3$，发热量为$32825 kJ$（即$0.00027 m^3/kJ$）；$1 kg$氢燃烧所需的理论空气量为$26.5 m^3$，发热量为$120220 kJ$（即$0.00022 m^3/kJ$）。在估算时，假设垃圾中主要的可燃成分是碳。",
+  "input_source": {
+    "type": "human",
+    "properties": {
+      "created_by": "TianGong"
+    }
+  },
+  "output": {
+    "v": 1,
+    "id": "305194110033",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.287365",
+    "created_by": "TianGong",
+    "output": "### 问题分析：\n\n我们的任务是估算焚烧100公斤混合城市固体废物（MSW）所需的理论空气量，该废物由以下组成：\n\n- 食物垃圾（25公斤）\n- 废纸（40公斤）\n- 废塑料（13公斤）\n- 破布（5公斤）\n- 废木材（2公斤）\n\n剩余成分（土壤、灰烬、砖块）被视为不可燃的。计算的关键属性是每种可燃材料的低位热值（kJ/kg）。\n\n我们还假设可燃材料主要通过碳的燃烧来贡献。通过使用给定的碳燃烧理论空气需求（0.00027 m³/kJ），我们计算所需的理论空气量。\n\n---\n\n### 分步解决方案：\n\n#### 1. **计算每个组分的总热能贡献**：\n   使用公式：\n   \\[\n   \\text{能量} = \\text{质量（kg）} \\times \\text{低位热值（kJ/kg）}\n   \\]\n   每个组分的能量贡献如下：\n   - 食物垃圾：\\( 25 \\, \\text{kg} \\times 3650 \\, \\text{kJ/kg} = 91,250 \\, \\text{kJ} \\)\n   - 废纸：\\( 40 \\, \\text{kg} \\times 13,750 \\, \\text{kJ/kg} = 550,000 \\, \\text{kJ} \\)\n   - 废塑料：\\( 13 \\, \\text{kg} \\times 32,570 \\, \\text{kJ/kg} = 423,410 \\, \\text{kJ} \\)\n   - 破布：\\( 5 \\, \\text{kg} \\times 15,450 \\, \\text{kJ/kg} = 77,250 \\, \\text{kJ} \\)\n   - 废木材：\\( 2 \\, \\text{kg} \\times 16,610 \\, \\text{kJ/kg} = 33,220 \\, \\text{kJ} \\)\n\n   **总热能（kJ）**：\n   \\[\n   91,250 + 550,000 + 423,410 + 77,250 + 33,220 = 1,175,130 \\, \\text{kJ}\n   \\]\n\n---\n\n#### 2. **确定理论空气量**：\n   假设燃烧主要涉及碳，并使用给定的比例：\n   \\[\n   \\text{空气量（m³）} = \\text{总热能（kJ）} \\times 0.00027 \\, \\text{(m³/kJ)}\n   \\]\n   代入计算的总热能：\n   \\[\n   \\text{空气量（m³）} = 1,175,130 \\times 0.00027 = 317.2851 \\, \\text{m³}\n   \\]\n\n---\n\n### 结果：\n\n1. **每个组分的热能贡献（kJ）**：\n   - 食物垃圾：\\( 91,250 \\, \\text{kJ} \\)\n   - 废纸：\\( 550,000 \\, \\text{kJ} \\)\n   - 废塑料：\\( 423,410 \\, \\text{kJ} \\)\n   - 破布：\\( 77,250 \\, \\text{kJ} \\)\n   - 废木材：\\( 33,220 \\, \\text{kJ} \\)\n\n   **总热能**：\\( 1,175,130 \\, \\text{kJ} \\)\n\n2. **所需理论空气量**：\\( \\mathbf{317.29 \\, \\text{m³}} \\)\n\n---\n\n### 结论：\n\n对于焚烧100公斤上述混合城市废物，理论上大约需要 **317.29 m³** 的空气，假设所有可燃组分主要通过碳燃烧来贡献。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "TianGong-Agent-2025-01-10",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": {
+      "v": 1,
+      "id": "300619679643",
+      "path": null,
+      "created_at": "2025-03-07T16:28:11.287365",
+      "created_by": "TianGong",
+      "type": "five_star",
+      "value": 5,
+      "requirement_ratings": {
+        "837162031303": {
+          "value": 5,
+          "type": "five_star"
+        }
+      },
+      "model_type": "task_output_rating"
+    },
+    "model_type": "task_output"
+  },
+  "repair_instructions": "响应在结构和正确性上完全匹配标准解法。它清晰地列出了每一个计算步骤，并得出了大约 317 立方米的正确最终答案。所有主要点都涵盖了，并且逻辑推理与参考方法非常一致。为了加深逻辑思考，可以详细说明使用 0.00027 m³/kJ 的理论依据（源于碳的热值需要的理论空气量）并讨论可能影响实际空气需求的现实因素（例如，热效率低下、含湿量）。",
+  "repaired_output": {
+    "v": 1,
+    "id": "328541476491",
+    "path": null,
+    "created_at": "2025-03-07T16:28:11.287365",
+    "created_by": "TianGong",
+    "output": "固体废物热值主要取决于碳和氢的含量，而碳和氢的理论空气量与发热量的比值相似。因此，未知元素组成时，可用理论空气量与热值的经验比值进行估算。1kg碳燃烧所需的理论空气量为8.89 m3，发热量为32825 kJ（0.00027m3/kJ）；1 kg氢燃烧所需理论空气量为26.5 m3，发热量为120220 kJ（0.00022m3/kJ）。垃圾中的碳元素含量较高，因此以碳的理论空气量与发热量比值0.00027 m3/kJ估算，则100 kg生活垃圾焚烧所需的理论空气量为317 m3。",
+    "source": {
+      "type": "synthetic",
+      "properties": {
+        "adapter_name": "kiln_openai_compatible_adapter",
+        "model_name": "gpt_4o_mini",
+        "model_provider": "openai",
+        "prompt_id": "simple_prompt_builder"
+      }
+    },
+    "rating": null,
+    "model_type": "task_output"
+  },
+  "intermediate_outputs": {},
+  "tags": [
+    "manual_run"
+  ],
+  "model_type": "task_run"
+}

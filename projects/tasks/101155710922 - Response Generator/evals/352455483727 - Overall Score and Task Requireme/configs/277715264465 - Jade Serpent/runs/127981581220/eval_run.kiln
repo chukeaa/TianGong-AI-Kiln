@@ -1,0 +1,19 @@
+{
+  "v": 1,
+  "id": "127981581220",
+  "created_at": "2025-03-07T20:59:26.713102",
+  "created_by": "tiangong",
+  "dataset_id": "177528470280",
+  "task_run_config_id": "139573506140",
+  "eval_config_eval": false,
+  "input": "按照水域功能分类，《地表水环境质量标准》中监测项目适用范围和功能分别是什么？",
+  "output": "根据《地表水环境质量标准》（GB 3838-2002），水域功能分类如下：\n\n1. **I类水**：\n   - **适用范围**：源头水、国家自然保护区等特别保护的水域。\n   - **功能**：主要适用于珍稀水生生物栖息地、鱼虾类产卵场和洄游通道，以及国家规定的其他特殊保护水域。\n\n2. **II类水**：\n   - **适用范围**：集中式生活饮用水源地一级保护区、二级保护区和其他GB3838标准的备用饮用水源。\n   - **功能**：适用于饮用，经过处理后可作为水源使用。\n\n3. **III类水**：\n   - **适用范围**：一般工业用水区及人体非直接接触的娱乐或游泳区。\n   - **功能**：用于生活用水，需进行处理后方可饮用。\n\n4. **IV类水**：\n   - **适用范围**：农业灌溉、水产养殖和一般工业用水区。\n   - **功能**：适用于农业和工业用途，水质要求较低，可能需要进一步处理。\n\n5. **V类水**：\n   - **适用范围**：农业灌溉、水产养殖和其他一般性水域。\n   - **功能**：主要用于农业灌溉，水质标准最低，适合耐污植物的生长。\n\n这些分类确保了不同水域根据其功能和用途得到适当的保护和管理。",
+  "intermediate_outputs": {
+    "chain_of_thought": "To evaluate the model's performance based on the provided requirements, let's analyze its output step by step with respect to the accuracy criteria:\n\n1) **Factual Correctness**:\n   - The model's output accurately describes the classification of surface water according to the \"Surface Water Environmental Quality Standards\" (GB 3838-2002). It clearly delineates the applicable range and function for each class (I to V).\n   - It provides specific details for each classification, which aligns well with the expected information.\n\n2) **Logical Reasoning**:\n   - The output is logically structured, with each class laid out in a clear manner. The organization aids comprehension, reflecting a sound approach to presenting the information. Each classification is followed by its applicable range and function systematically.\n\n3) **Calculation Process**:\n   - While this task does not involve calculation in the traditional sense, the organization of the categories presented serves a similar function: the model provides structured information that is complete and easy to follow, aligning with the provided standard.\n\nConsidering the evaluation criteria:\n- The model's output is completely accurate, covering all key points with no factual inaccuracies (5 points in Factual Correctness).\n- The reasoning is clear and well-structured (aligned with 5 points in Logical Reasoning).\n- The output is organized without errors (potentially aligns with 5 points in Calculation Process).\n\nOverall, the model meets the criteria for a high level of performance across all features evaluated—factual correctness, logical reasoning, and organization/delivery of information.\n\nGiven this analysis, an appropriate overall score for the model’s output on this task would be **5**."
+  },
+  "scores": {
+    "accuracy": 5.0,
+    "overall_rating": 5.0
+  },
+  "model_type": "eval_run"
+}

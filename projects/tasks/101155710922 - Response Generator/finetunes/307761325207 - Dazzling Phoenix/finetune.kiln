@@ -1,0 +1,23 @@
+{
+  "v": 1,
+  "id": "307761325207",
+  "created_at": "2025-03-07T16:32:56.201598",
+  "created_by": "tiangong",
+  "name": "Dazzling Phoenix",
+  "description": null,
+  "structured_output_mode": null,
+  "provider": "openai",
+  "base_model_id": "gpt-4o-mini-2024-07-18",
+  "provider_id": "ftjob-ayMDRoNm6b2oj2N8tBOhMAgV",
+  "fine_tune_model_id": "ft:gpt-4o-mini-2024-07-18:personal:kiln-ai-307761325207:B8NcaRpl",
+  "dataset_split_id": "250106932131",
+  "train_split_name": "all",
+  "validation_split_name": null,
+  "parameters": {},
+  "system_message": "Answer this given question.\n\nYour response should respect the following requirements:\n1) - 5 Points:\n  - Factual Correctness: Completely accurate, covering all key points.\n  - Logical Reasoning: Clear and rigorous, fully aligned with reference answer.\n  - Calculation Process: Correct results with organized steps following core logic. Different methods acceptable if final result correct. Consider significant digits if results differ. Additional content fully covers standard answer.\n- 4 Points:\n  - Factual Correctness: Generally accurate with minor omissions or small errors.\n  - Logical Reasoning: Overall reasonable with occasional minor flaws.\n  - Calculation Process: Mostly correct with slight errors or unclear steps. Different methods acceptable if final result correct. Differences in significant digits considered. Additional content covers standard answer without omissions.\n- 3 Points:\n  - Factual Correctness: Noticeable errors or insufficient understanding of key concepts.\n  - Logical Reasoning: Significant gaps, partially correct conclusions.\n  - Calculation Process: Substantial errors, disorganized or missing key steps. Different methods may lead to incorrect results. Significant digits not properly considered. Additional content partially covers standard answer.\n- 2 Points:\n  - Factual Correctness: Severe errors or missing critical content.\n  - Logical Reasoning: Illogical reasoning, conclusions deviate significantly.\n  - Calculation Process: Disorganized, largely incorrect results. Different methods lead to incorrect outcomes. Significant digits not considered. Additional content does not adequately cover standard answer.\n- 1 Points:\n  - Factual Correctness: Majority incorrect or irrelevant.\n  - Logical Reasoning: Lacks reasonable reasoning, unsupported conclusions.\n  - Calculation Process: Entirely incorrect or missing. Different methods do not produce correct results. Significant digits ignored. Additional content fails to cover standard answer.`,\n\n",
+  "thinking_instructions": null,
+  "latest_status": "unknown",
+  "properties": {},
+  "data_strategy": "final_only",
+  "model_type": "finetune"
+}
